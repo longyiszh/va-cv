@@ -3,6 +3,7 @@ header#cover {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    margin-bottom: 0px;
     h3 {
         color: ghostwhite;
     }
@@ -20,10 +21,60 @@ header#cover {
 // }
 
 #divAvatarHolder {
+    position: relative;
+    z-index: 50;
     img {
         margin: 0px auto;
         width: 200px;
         border: solid white 2px;
+    }
+}
+
+main {
+    padding: 0px;
+    ul {
+        list-style: none;
+        padding: 0px;
+        li > div {
+            header {
+                height: 45px;
+                padding: 0px;
+                h2 {
+                    width: 200px;
+                    margin: 0px;
+                    font-size: 23px;
+                    color: floralwhite;
+                    position: relative;
+                    top: 10px;
+                    left: 1em;
+                }
+            }
+            section.row {
+                margin: 1em 0em 1em 2em;
+                width: 100%;
+            }
+            header#info {
+                background-color: lawngreen;
+            }
+            header#edu {
+                background-color: dodgerblue;
+            }
+            header#desiredJob {
+                background-color: dodgerblue;
+            }
+            header#workExp {
+                background-color: dodgerblue;
+            }
+            header#interests {
+                background-color: dodgerblue;
+            }
+            header#projects {
+                background-color: dodgerblue;
+            }
+            header#compliments {
+                background-color: dodgerblue;
+            }
+        }
     }
 }
 
