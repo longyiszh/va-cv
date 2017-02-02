@@ -1,0 +1,82 @@
+header#cover {
+    background-image: url(assets/images/space.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    h3 {
+        color: ghostwhite;
+    }
+    h3#username {
+        margin-top:25px;
+        text-align: center;
+        font-size: 40px;
+    }
+}
+
+// #divCover {
+//     img {
+//         height: 200px;
+//     }
+// }
+
+#divAvatarHolder {
+    img {
+        margin: 0px auto;
+        width: 200px;
+        border: solid white 2px;
+    }
+}
+
+/* Responsive Settings Start*/
+
+/* Extra small devices (phones, less than 768px) */
+@media only screen and (max-width: 768px) {	
+    header#cover {
+        h3#fullTitle {
+            display: none;
+        }
+        h3#username {
+            display: block;
+        }
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    header#cover {
+        h3#fullTitle {
+            display: none;
+        }
+        h3#username {
+            display: block;
+        }       
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    h3#fullTitle {
+        display: block;
+    }
+    h3#username {
+        display: none;
+    }  
+    #divAvatarHolder {
+        float:right;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    h3#fullTitle {
+        display: block;
+    }
+    h3#username {
+        display: none;
+    }
+    #divAvatarHolder {
+        float:right;
+    }
+}
+
+/* Responsive Settings End*/
