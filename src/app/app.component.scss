@@ -1,3 +1,5 @@
+@import "../assets/scss/_colors.scss";
+
 header#cover {
     background-image: url(assets/images/space.jpg);
     background-position: center;
@@ -32,7 +34,7 @@ header#cover {
 
 main {
     padding: 0px;
-    ul {
+    ul.listSections {
         list-style: none;
         padding: 0px;
         li > div {
@@ -50,29 +52,43 @@ main {
                 }
             }
             section.row {
-                margin: 1em 0em 1em 2em;
+                margin: 1em 0em 1em 0em;
+                padding-left: 1em;
                 width: 100%;
+                div.card{
+                    text-align: center;
+                    margin-left: 10px;
+                    div.projectImg{
+                        height: 80%;
+                        > img {
+                            margin-top: 10px;
+                            max-width: 100px;
+                        }
+                    }
+                    
+
+                }
             }
             header#info {
-                background-color: lawngreen;
+                background-color: $teal;
             }
             header#edu {
-                background-color: dodgerblue;
+                background-color: $purple;
             }
             header#desiredJob {
-                background-color: dodgerblue;
+                background-color: $orange;
             }
             header#workExp {
-                background-color: dodgerblue;
+                background-color: $cyan;
             }
             header#interests {
-                background-color: dodgerblue;
+                background-color: $light-blue;
             }
             header#projects {
-                background-color: dodgerblue;
+                background-color: $indigo;
             }
             header#compliments {
-                background-color: dodgerblue;
+                background-color: $pink;
             }
         }
     }
