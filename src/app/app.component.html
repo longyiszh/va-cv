@@ -1,17 +1,240 @@
-<h1>
-  {{title}}
-</h1>
+<header id="cover" class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div id="divAvatarHolder">
+      <img class="img-fluid img-circle" src="assets/images/{{ user.avatar }}" alt="{{ user.name }}">
+    </div>
+    <h3 id="fullTitle">{{ title }}</h3>
+    <h3 id="username">{{ user.name }}</h3>
+  </div>
+</header>
 
-<div class="container">
+<main class="container-fluid">
+  <ul class="listSections">
+    <li>
+      <div>
+        <header id="info">
+          <h2>Personal info</h2>
+        </header>
+        <section class="row">
+          <div class="col-md-6">
+            <p><span>I am </span> <span>{{ user.name }}</span></p>
+            <p><span>I was born at: </span> <span>2222-2-22</span></p>
+          </div>
+          <div class="col-md-6">
+            <p><span>Phone number:</span> <span>192-1681-0101</span></p>
+            <p><span>Email: </span> <span>valorad@nmail.com</span></p>
+            <p><span>Home page: </span> <span>https://www.gaoduanhei.com</span></p>
+          </div>
+        </section>
+      </div>
+    </li>
+    <li>
+      <div>
+        <header id="edu">
+          <h2>Education</h2>
+        </header>
+        <section class="row">
+          <div class="col-md-6">
+            <p><span>Graduated from</span> <span>SCET</span></p>
+            <p><span>Major in </span> <span>Scouting</span></p>
+            <p><span>Acheived Degree: </span> <span>Bachelor of Engineering</span></p>
+            <p><span>GPA: </span> <span>78%</span></p>
+          </div>
+          <div class="col-md-6">
+              <span>Skills:</span>
+              <ul>
+                <li> Besieger construction </li>
+                <li> Camouflage </li>
+                <li> Archery </li>
+                <li> That's it </li>
+              </ul>
+            <p><span>Awards: </span> <span>SC2terrible, BillyCDK, RA2 top 100, Steam 200+, etc</span></p>
+          </div>
+        </section>
+      </div>
+    </li>
+    <li>
+      <div>
+        <header id="desiredJob">
+          <h2>Desired Jobs</h2>
+        </header>
+        <section class="row">
+          <div class="col-lg-12">
+            <span>Project Manager</span>
+          </div>
+        </section>
+      </div>
+    </li>
+    <li>
+      <div>
+        <header id="workExp">
+          <h2>Work Experience</h2>
+        </header>
+        <section class="row">
+          <div class="col-md-6">
+            <table class="table table-striped">
+              <thead class="thead-default">
+                <tr>
+                  <th>#</th>
+                  <th>Period</th>
+                  <th>Company</th>
+                  <th>Title</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>2014.7-2014.8</td>
+                  <td>Google</td>
+                  <td>Promo paper distributor</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>2016.7-2016.9</td>
+                  <td>Apple Inc.</td>
+                  <td>Sales manager</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-md-6">
+            <table class="table table-striped">
+              <thead class="thead-default">
+                <tr>
+                  <th>#</th>
+                  <th>Time</th>
+                  <th>Project</th>
+                  <th>What I Did</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>2016.1</td>
+                  <td>Fire Cracker</td>
+                  <td>CS Design</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>2016.3</td>
+                  <td>Psychic Amplifier</td>
+                  <td>Collected materials</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>2016.12</td>
+                  <td>Operation Snapshot</td>
+                  <td>Infiltrated a facility</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </li>
+    <li>
+      <div>
+        <header id="interests">
+          <h2>Interests</h2>
+        </header>
+        <section class="row">
+          <div class="col-md-6">
+            <h3>Profesional Interests</h3>
+            <ul> 
+              <li> Love little mechanisms </li>
+              <li> Being sneaky </li>
+              <li> Hacking terminals </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h3>Personal Interests</h3>
+              <ul>
+                <li> staying quiet </li>
+                <li> love pu gai noodle </li>
+                <li> Doing exercises, going fit </li>
+              </ul>
+          </div>
+        </section>
+      </div>
+    </li>
+    <li>
+      <div>
+        <header id="projects">
+          <h2>Projects</h2>
+        </header>
+        <section class="row">
+          <div class="col-sm-3 card">
+            <div class="projectImg">
+              <img src="assets/images/firecracker.png" alt="Firecracker">
+            </div>
+            <small>firecracker</small>
+          </div>
+          <div class="col-sm-3 card">
+            <div class="projectImg">
+              <img src="assets/images/amplifier.png" alt="Psychic Amplifier">
+            </div>
+            <small>Psychic Amplifier</small>
+          </div>
+          <div class="col-sm-3 card">
+            <div class="projectImg">
+              <img src="assets/images/incognito.png" alt="Operation Snapshot">
+            </div>
+            <small>Operation Snapshot</small>
+          </div>
+        </section>
+      </div>
+    </li>
+    <li>
+      <div>
+        <header id="compliments">
+          <h2>Compliments</h2>
+        </header>
+        <section class="row">
+          <div class="col-sm-3 card">
+            <div class="projectImg">
+              <img src="assets/images/protoss.jpg" alt="SC2terrible">
+            </div>
+            <small>SC2terrible</small>
+          </div>
+          <div class="col-sm-3 card">
+            <div class="projectImg">
+              <img src="assets/images/icon_digital_key.png" alt="BDK">
+            </div>
+            <small>BillyCDK</small>
+          </div>
+          <div class="col-sm-3 card">
+            <div class="projectImg">
+              <img src="assets/images/steam.png" alt="Steam200+">
+            </div>
+            <small>Steam 200+ games</small>
+          </div>
+          <div class="col-sm-3 card">
+            <div class="projectImg">
+              <img src="assets/images/Apple-icon.png" alt="applefan">
+            </div>
+            <small>2016 Great Apple fan</small>
+          </div>
+          <div class="col-sm-3 card">
+            <div class="projectImg">
+              <img src="assets/images/UIplus.png" alt="more">
+            </div>
+            <small>And more...</small>
+          </div>
+        </section>
+      </div>
+    </li>
+  </ul>
+</main>
+
+<!--<div class="container">
   <div class="col-lg-12">
     <a class="btn btn-primary">Click</a>
   </div>
-</div>
-
-  <div class="form-group label-static">
+</div>-->
+  <!--<div class="form-group label-static">
     <label for="i2" class="control-label">label-static</label>
     <input type="email" class="form-control" id="i2" placeholder="placeholder attribute">
 
     <p class="help-block">This is a hint as a <code>p.help-block.hint</code></p>
-  </div>
+  </div>-->
 

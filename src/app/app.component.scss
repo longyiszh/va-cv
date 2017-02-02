@@ -1,0 +1,149 @@
+@import "../assets/scss/_colors.scss";
+
+header#cover {
+    background-image: url(assets/images/space.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-bottom: 0px;
+    h3 {
+        color: ghostwhite;
+    }
+    h3#username {
+        margin-top:25px;
+        text-align: center;
+        font-size: 40px;
+    }
+}
+
+// #divCover {
+//     img {
+//         height: 200px;
+//     }
+// }
+
+#divAvatarHolder {
+    position: relative;
+    z-index: 50;
+    img {
+        margin: 0px auto;
+        width: 200px;
+        border: solid white 2px;
+    }
+}
+
+main {
+    padding: 0px;
+    ul.listSections {
+        list-style: none;
+        padding: 0px;
+        li > div {
+            header {
+                height: 45px;
+                padding: 0px;
+                h2 {
+                    width: 200px;
+                    margin: 0px;
+                    font-size: 23px;
+                    color: floralwhite;
+                    position: relative;
+                    top: 10px;
+                    left: 1em;
+                }
+            }
+            section.row {
+                margin: 1em 0em 1em 0em;
+                padding-left: 1em;
+                width: 100%;
+                div.card{
+                    text-align: center;
+                    margin-left: 10px;
+                    div.projectImg{
+                        height: 80%;
+                        > img {
+                            margin-top: 10px;
+                            max-width: 100px;
+                        }
+                    }
+                    
+
+                }
+            }
+            header#info {
+                background-color: $teal;
+            }
+            header#edu {
+                background-color: $purple;
+            }
+            header#desiredJob {
+                background-color: $orange;
+            }
+            header#workExp {
+                background-color: $cyan;
+            }
+            header#interests {
+                background-color: $light-blue;
+            }
+            header#projects {
+                background-color: $indigo;
+            }
+            header#compliments {
+                background-color: $pink;
+            }
+        }
+    }
+}
+
+/* Responsive Settings Start*/
+
+/* Extra small devices (phones, less than 768px) */
+@media only screen and (max-width: 768px) {	
+    header#cover {
+        h3#fullTitle {
+            display: none;
+        }
+        h3#username {
+            display: block;
+        }
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    header#cover {
+        h3#fullTitle {
+            display: none;
+        }
+        h3#username {
+            display: block;
+        }       
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    h3#fullTitle {
+        display: block;
+    }
+    h3#username {
+        display: none;
+    }  
+    #divAvatarHolder {
+        float:right;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    h3#fullTitle {
+        display: block;
+    }
+    h3#username {
+        display: none;
+    }
+    #divAvatarHolder {
+        float:right;
+    }
+}
+
+/* Responsive Settings End*/
