@@ -1,18 +1,25 @@
 @import "../assets/scss/_colors.scss";
 
+p {
+    margin-bottom: 0px;
+}
+
 header#cover {
     background-image: url(assets/images/space.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin-bottom: 0px;
-    h3 {
+    h3, h4 {
         color: ghostwhite;
     }
     h3#username {
         margin-top:25px;
         text-align: center;
         font-size: 40px;
+    }
+    h4#pfFields {
+        text-align: center;
     }
 }
 
@@ -37,60 +44,98 @@ main {
     ul.listSections {
         list-style: none;
         padding: 0px;
-        li > div {
-            header {
-                height: 45px;
-                padding: 0px;
-                h2 {
-                    width: 200px;
-                    margin: 0px;
-                    font-size: 23px;
-                    color: floralwhite;
-                    position: relative;
-                    top: 10px;
-                    left: 1em;
+        li {
+            div {
+                header {
+                    height: 45px;
+                    padding: 0px;
+                    h2 {
+                        width: 200px;
+                        margin: 0px;
+                        font-size: 23px;
+                        color: floralwhite;
+                        position: relative;
+                        top: 10px;
+                        left: 1em;
+                    }
                 }
-            }
-            section.row {
-                margin: 1em 0em 1em 0em;
-                padding-left: 1em;
-                width: 100%;
-                div.card{
-                    text-align: center;
-                    margin-left: 10px;
-                    div.projectImg{
-                        height: 80%;
-                        > img {
-                            margin-top: 10px;
-                            max-width: 100px;
+                section.row {
+                    margin: 1em 0em 1em 0em;
+                    padding-left: 1em;
+                    width: 100%;
+                    i.material-icons {
+                        position: relative;
+                        top: 11px;
+                        right: 9px;
+                    }
+                    div.card{
+                        text-align: center;
+                        margin-left: 10px;
+                        max-width: 150px;
+                        div.projectImg{
+                            height: 80%;
+                            > img {
+                                margin-top: 10px;
+                                max-width: 100px;
+                            }
                         }
                     }
-                    
-
                 }
             }
-            header#info {
-                background-color: $teal;
+            div#info {
+                header {
+                    background-color: $teal;
+                }
+                i.material-icons {
+                    color: $teal;
+                }
             }
-            header#edu {
-                background-color: $purple;
+            div#edu {
+                header {
+                    background-color: $purple;
+                }
+                i.material-icons {
+                    color: $purple;
+                }
             }
-            header#desiredJob {
-                background-color: $orange;
+            div#desiredJob {
+                header {
+                    background-color: $orange;
+                }
             }
-            header#workExp {
-                background-color: $cyan;
+            div#workExp {
+                header {
+                    background-color: $cyan;
+                }
+                section > div > table{
+                    thead {
+                        tr {
+                            background-color: $cyan-100;
+                        }
+                    }
+                    tbody {
+                        tr:nth-of-type(odd) {
+                            background-color: $cyan-50;
+                        }
+                    }
+                }
             }
-            header#interests {
-                background-color: $light-blue;
+            div#interests {
+                header {
+                    background-color: $light-blue;
+                }
             }
-            header#projects {
-                background-color: $indigo;
+            div#projects {
+                header {
+                    background-color: $indigo;
+                }
             }
-            header#compliments {
-                background-color: $pink;
+            div#awards {
+                header {
+                    background-color: $pink;
+                }
             }
-        }
+        } // <-- li
     }
 }
 
@@ -131,6 +176,9 @@ main {
     #divAvatarHolder {
         float:right;
     }
+    h4#pfFields {
+        float: left;
+    }
 }
 
 /* Large devices (large desktops, 1200px and up) */
@@ -143,6 +191,9 @@ main {
     }
     #divAvatarHolder {
         float:right;
+    }
+    h4#pfFields {
+        float: left;
     }
 }
 
