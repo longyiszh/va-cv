@@ -29,7 +29,8 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Deploying to GitHub Pages
 
 <del>Run `ng github-pages:deploy` to deploy to GitHub Pages.</del>
-Warning! Deploying to github page command is temporarily down in latest Angular-cli. See angular/angular-cli#4385
+Warning! Deploying to github page command is temporarily down in latest Angular-cli. 
+See [angular/angular-cli#4385](https://github.com/angular/angular-cli/pull/4385).
 
 ## Further help
 
