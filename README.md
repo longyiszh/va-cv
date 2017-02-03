@@ -1,9 +1,13 @@
-# VaCv
+# VaCV
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
+Valorad's material designed Resume.
+
+Was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+(Or you can run `npm run go` to automatically start Express back-end MVC layout)
 
 ## Code scaffolding
 
@@ -24,7 +28,8 @@ Before running the tests make sure you are serving the app via `ng serve`.
 
 ## Deploying to GitHub Pages
 
-Run `ng github-pages:deploy` to deploy to GitHub Pages.
+<del>Run `ng github-pages:deploy` to deploy to GitHub Pages.</del>
+Warning! Deploying to github page command is temporarily down in latest Angular-cli. See angular/angular-cli#4385
 
 ## Further help
 
