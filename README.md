@@ -2,6 +2,8 @@
 
 Valorad's material designed Resume.
 
+This resume hase been deployed on [Shizihun's github page](https://longyiszh.github.io/va-cv/).
+
 Was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
 
 ## Development server
