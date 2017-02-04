@@ -10,7 +10,8 @@
     "test": "ng test",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "protractor",
-    "go": "ng build && cp './src/app.js' './dist' && node dist/app"
+    "go": "ng build && cp './src/app.js' './dist' && node dist/app",
+    "goWin": "(ng build) && powershell (xcopy '.\\src\\app.js' 'dist') && (node dist/app)"
   },
   "private": true,
   "dependencies": {
