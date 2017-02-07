@@ -60,12 +60,12 @@ main {
                     }
                 }
                 section.row {
-                    margin: 1em 0em 1em 0em;
+                    margin: 2px 0em 4px 0em;;
                     padding-left: 1em;
                     width: 100%;
                     i.material-icons {
                         position: relative;
-                        top: 11px;
+                        top: 5px;
                         right: 9px;
                     }
                     div.card{
@@ -79,6 +79,9 @@ main {
                                 max-width: 100px;
                             }
                         }
+                    }
+                    ul > li {
+                        font-size: 12px;
                     }
                 }
             }
@@ -107,15 +110,18 @@ main {
                 header {
                     background-color: $cyan;
                 }
-                section > div > table{
-                    thead {
-                        tr {
-                            background-color: $cyan-100;
+                section > div {
+                    margin-top: 5px;
+                    > table{
+                        thead {
+                            tr {
+                                background-color: $cyan-100;
+                            }
                         }
-                    }
-                    tbody {
-                        tr:nth-of-type(odd) {
-                            background-color: $cyan-50;
+                        tbody {
+                            tr:nth-of-type(odd) {
+                                background-color: $cyan-50;
+                            }
                         }
                     }
                 }
