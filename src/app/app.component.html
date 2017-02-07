@@ -5,7 +5,7 @@
     </div>
     <h3 id="fullTitle">{{ title }}</h3>
     <h3 id="username">{{ user.name }}</h3>
-    <h4 id="pfFields">Recon/CS/Engineering</h4>
+    <h4 id="pfFields">{{ user.field }}</h4>
   </div>
 </header>
 
@@ -17,14 +17,17 @@
           <h2>Personal info</h2>
         </header>
         <section class="row">
-          <div class="col-md-6">
-            <p><i class="material-icons md-36">assignment_ind</i><span>I am </span> <span>{{ user.name }}</span></p>
-            <p><i class="material-icons md-36">cake</i><span>I was born on: </span> <span>2222-2-22</span></p>
+          <div class="col-sm-6">
+            <p><i class="material-icons md-20">cake</i><b>I was born on: </b> <span>{{ info.birthday }}</span></p>
           </div>
-          <div class="col-md-6">
-            <p><i class="material-icons md-36">phone</i><span>Phone number:</span> <span>192-1681-0101</span></p>
-            <p><i class="material-icons md-36">email</i><span>Email: </span> <span>valorad@nmail.com</span></p>
-            <p><i class="material-icons md-36">home</i><span>Home page: </span> <span>https://www.gaoduanhei.com</span></p>
+          <div class="col-sm-6">
+            <p><i class="material-icons md-20">phone</i><b>Phone number:</b> <span>{{ info.phone }}</span></p>
+          </div>
+          <div class="col-sm-6">
+            <p><i class="material-icons md-20">email</i><b>Email: </b> <span>{{ info.email }}</span></p>
+          </div>
+          <div class="col-sm-6">
+            <p><i class="material-icons md-20">home</i><b>Home page: </b> <span>{{ info.php }}</span></p>
           </div>
         </section>
       </div>
@@ -35,22 +38,24 @@
           <h2>Education</h2>
         </header>
         <section class="row">
-          <div class="col-md-6">
-            <p><i class="material-icons md-60">school</i><span>Graduated from</span> <span>SCET</span></p>
-            <p><span>Major in </span> <span>Scouting</span></p>
-            <p><span>Acheived Degree: </span> <span>Bachelor of Engineering</span></p>
-            <p><span>GPA: </span> <span>78%</span></p>
+          <!--<i class="material-icons md-80">school</i>-->
+          <div class="col-md-6" id="eduBasic">
+            <p><b>Graduated from</b> <span>{{ edu.school }}</span></p>
+            <p><b>Major in </b> <span>{{ edu.major }}</span></p>
+            <p><b>GPA: </b> <span>{{ edu.gpa }}</span></p>
           </div>
           <div class="col-md-6">
-              <span>Skills:</span>
+              <b>Skills:</b>
               <ul>
-                <li> Siege engine construction </li>
-                <li> Camouflage </li>
-                <li> Archery </li>
-                <li> That's it </li>
+                <li *ngFor="let skill of edu.skills">{{ skill }}</li>
               </ul>
-            <p><span>Awards: </span> <span>SC2terrible, BillyCDK, RA2 top 100, Steam 200+, etc</span></p>
           </div>
+          <div class="col-md-6"><p><b>Acheived Degree: </b> <span>{{ edu.degree }}</span></p></div>
+          <div class="col-md-6"><p>
+            <b>Awards: </b>
+            <span *ngFor="let award of edu.awards">{{ award }}, </span>etc...
+           </p>
+           </div>
         </section>
       </div>
     </li>
@@ -61,7 +66,7 @@
         </header>
         <section class="row">
           <div class="col-lg-12">
-            <span>Project Manager</span>
+            <b>{{ apply.desiredjob }}</b>
           </div>
         </section>
       </div>
@@ -72,7 +77,7 @@
           <h2>Work Experience</h2>
         </header>
         <section class="row">
-          <div class="col-md-6">
+          <div class="col-lg-6">
             <table class="table table-striped">
               <thead class="thead-default">
                 <tr>
@@ -83,22 +88,16 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>2014.7-2014.8</td>
-                  <td>Google</td>
-                  <td>Promo paper distributor</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>2016.7-2016.9</td>
-                  <td>Apple Inc.</td>
-                  <td>Sales manager</td>
+                <tr *ngFor="let exp of workexp,let i=index">
+                  <th scope="row">{{ i+1 }}</th>
+                  <td>{{ exp.period.timeStart|date:'y/M' }}-{{ exp.period.timeEnd|date:'y/M' }}</td>
+                  <td>{{ exp.company }}</td>
+                  <td>{{ exp.title }}</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <div class="col-md-6">
+          <div class="col-lg-6">
             <table class="table table-striped">
               <thead class="thead-default">
                 <tr>
@@ -109,23 +108,11 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>2016.1</td>
-                  <td>Fire Cracker</td>
-                  <td>CS Design</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>2016.3</td>
-                  <td>Psychic Amplifier</td>
-                  <td>Collected materials</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>2016.12</td>
-                  <td>Operation Snapshot</td>
-                  <td>Infiltrated a facility</td>
+                <tr *ngFor="let project of projects,let i=index">
+                  <th scope="row">{{ i+1 }}</th>
+                  <td>{{ project.time|date:'y/M' }}</td>
+                  <td>{{ project.name }}</td>
+                  <td><small>{{ project.discr }}</small></td>
                 </tr>
               </tbody>
             </table>
