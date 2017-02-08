@@ -21,7 +21,11 @@ interface IEdu {
   gpa?: string,
   degree: string,
   skills: any,
-  awards: any
+}
+
+interface IAwards {
+  title: any,
+  img?: string
 }
 
 interface IDesiredJobs {
@@ -40,7 +44,13 @@ interface IWorkExp {
 interface IProjects {
   time: Date,
   name: string,
-  discr: string
+  discr: string,
+  img?: string
+}
+
+interface IInterests {
+  cat: string,
+  interest: string
 }
 
 
@@ -76,10 +86,25 @@ export class AppComponent {
       "Camouflage: passed INIT test with top 1% score",
       "Archery: part of gift"
     ],
-    awards: [
-      "SC2terrible","BillyCDKofTheYear", "Steam 200+", "2016 great Apple fan"
-    ]
   }
+
+  public awards: [IAwards] = [
+    {
+      title: "SC2terrible"
+    },
+    {
+      title: "BillyCDKofTheYear",
+      img: "icon_digital_key.png"
+    },
+    {
+      title: "Steam 200+",
+      img: "steam.png"
+    },
+    {
+      title: "2016 great Apple fan",
+      img: "Apple-icon.png"
+    }
+  ];
 
   public apply: IDesiredJobs = {
     desiredjob: [
@@ -122,7 +147,37 @@ export class AppComponent {
       name: "Operation Snapshot",
       discr: "Assigned to infiltrate an enemy hideout called Auditore mansion."
     }
-  ]
+  ];
+
+  public proInterest: [IInterests] = [
+    {
+      cat: "professional",
+      interest: "Love little mechanisms"
+    },
+    {
+      cat: "professional",
+      interest: "Playing hide and seek"
+    },
+    {
+      cat: "professional",
+      interest: "Hacking terminals"
+    }
+  ];
+
+  public perInterest: [IInterests] = [
+    {
+      cat: "personal",
+      interest: "Staying quiet"
+    },
+    {
+      cat: "personal",
+      interest: "Eating pu gai noodle"
+    },
+    {
+      cat: "personal",
+      interest: "Going fit"
+    }
+  ];
 
   title = `${ this.user.name }'s Resume for ${ this.user.position } at ${ this.user.company }`;
 }

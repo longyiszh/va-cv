@@ -53,7 +53,7 @@
           <div class="col-md-6"><p><b>Acheived Degree: </b> <span>{{ edu.degree }}</span></p></div>
           <div class="col-md-6"><p>
             <b>Awards: </b>
-            <span *ngFor="let award of edu.awards">{{ award }}, </span>etc...
+            <span *ngFor="let award of awards">{{ award.title }}, </span>etc...
            </p>
            </div>
         </section>
@@ -126,20 +126,16 @@
           <h2>Interests</h2>
         </header>
         <section class="row">
-          <div class="col-md-6">
+          <div class="col-sm-6">
             <h3>Profesional Interests</h3>
             <ul> 
-              <li> Love little mechanisms </li>
-              <li> Being sneaky </li>
-              <li> Hacking terminals </li>
+              <li *ngFor="let proi of proInterest"> {{ proi.interest }} </li>
             </ul>
           </div>
-          <div class="col-md-6">
+          <div class="col-sm-6">
             <h3>Personal Interests</h3>
               <ul>
-                <li> staying quiet </li>
-                <li> love pu gai noodle </li>
-                <li> Doing exercises, going fit </li>
+                <li *ngFor="let peri of perInterest"> {{ peri.interest }} </li>
               </ul>
           </div>
         </section>
@@ -151,23 +147,12 @@
           <h2>Projects</h2>
         </header>
         <section class="row">
-          <div class="col-sm-3 card">
+          <div class="col-sm-3 card" *ngFor="let project of projects">
             <div class="projectImg">
-              <img src="assets/images/firecracker.png" alt="Firecracker">
+              <img *ngIf="project.img" src="assets/images/{{ project.img }}" alt="{{ project.name }}">
+              <i *ngIf="!project.img" class="material-icons md-80">settings</i>
             </div>
-            <small>firecracker</small>
-          </div>
-          <div class="col-sm-3 card">
-            <div class="projectImg">
-              <img src="assets/images/amplifier.png" alt="Psychic Amplifier">
-            </div>
-            <small>Psychic Amplifier</small>
-          </div>
-          <div class="col-sm-3 card">
-            <div class="projectImg">
-              <img src="assets/images/incognito.png" alt="Operation Snapshot">
-            </div>
-            <small>Operation Snapshot</small>
+            <small>{{ project.name }}</small>
           </div>
         </section>
       </div>
@@ -178,29 +163,12 @@
           <h2>Awards</h2>
         </header>
         <section class="row">
-          <div class="col-sm-3 card">
+          <div class="col-sm-3 card" *ngFor="let award of awards">
             <div class="projectImg">
-              <img src="assets/images/protoss.jpg" alt="SC2terrible">
+              <img *ngIf="award.img" src="assets/images/{{award.img}}" alt="{{ award.title }}">
+              <i *ngIf="!award.img" class="material-icons md-80">redeem</i>
             </div>
-            <small>SC2terrible</small>
-          </div>
-          <div class="col-sm-3 card">
-            <div class="projectImg">
-              <img src="assets/images/icon_digital_key.png" alt="BDK">
-            </div>
-            <small>BillyCDK</small>
-          </div>
-          <div class="col-sm-3 card">
-            <div class="projectImg">
-              <img src="assets/images/steam.png" alt="Steam200+">
-            </div>
-            <small>Steam 200+ games</small>
-          </div>
-          <div class="col-sm-3 card">
-            <div class="projectImg">
-              <img src="assets/images/Apple-icon.png" alt="applefan">
-            </div>
-            <small>2016 Great Apple fan</small>
+            <small>{{ award.title }}</small>
           </div>
           <div class="col-sm-3 card">
             <div class="projectImg">
