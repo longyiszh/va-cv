@@ -63,20 +63,17 @@ main {
                     margin: 2px 0em 4px 0em;;
                     padding-left: 1em;
                     width: 100%;
-                    i.material-icons {
-                        position: relative;
-                        top: 5px;
-                        right: 9px;
-                    }
                     div.card{
                         text-align: center;
                         margin-left: 10px;
                         max-width: 150px;
+                        margin: 0.25rem 0.25rem 0.25rem 0rem;
                         div.projectImg{
                             height: 80%;
+                            text-align: center;
                             > img {
                                 margin-top: 10px;
-                                max-width: 100px;
+                                max-width: 80px;
                             }
                         }
                     }
@@ -91,6 +88,9 @@ main {
                 }
                 i.material-icons {
                     color: $teal;
+                    position: relative;
+                    top: 5px;
+                    right: 9px;
                 }
             }
             div#edu {
@@ -135,10 +135,20 @@ main {
                 header {
                     background-color: $indigo;
                 }
+                i.material-icons {
+                    color: $indigo;
+                    position: relative;
+                    top: 10px;
+                }
             }
             div#awards {
                 header {
                     background-color: $pink;
+                }
+                i.material-icons {
+                    color: $pink;
+                    position: relative;
+                    top: 10px;
                 }
             }
         } // <-- li
