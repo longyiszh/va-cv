@@ -72,6 +72,44 @@
       </div>
     </li>
     <li>
+      <div id="projects">
+        <header>
+          <h2>Projects</h2>
+        </header>
+        <section class="row">
+          <div class="col-sm-3 card" *ngFor="let project of projects">
+            <div class="projectImg">
+              <img *ngIf="project.img" src="assets/images/{{ project.img }}" alt="{{ project.name }}">
+              <i *ngIf="!project.img" class="material-icons md-80">settings</i>
+            </div>
+            <small>{{ project.name }}</small>
+          </div>
+        </section>
+      </div>
+    </li>
+    <li>
+      <div id="awards">
+        <header>
+          <h2>Awards</h2>
+        </header>
+        <section class="row">
+          <div class="col-sm-3 card" *ngFor="let award of awards">
+            <div class="projectImg">
+              <img *ngIf="award.img" src="assets/images/{{award.img}}" alt="{{ award.title }}">
+              <i *ngIf="!award.img" class="material-icons md-80">redeem</i>
+            </div>
+            <small>{{ award.title }}</small>
+          </div>
+          <div class="col-sm-3 card">
+            <div class="projectImg">
+              <img src="assets/images/UIplus.png" alt="more">
+            </div>
+            <small>And more...</small>
+          </div>
+        </section>
+      </div>
+    </li>
+    <li>
       <div id="workExp">
         <header>
           <h2>Work Experience</h2>
@@ -137,44 +175,6 @@
               <ul>
                 <li *ngFor="let peri of perInterest"> {{ peri.interest }} </li>
               </ul>
-          </div>
-        </section>
-      </div>
-    </li>
-    <li>
-      <div id="projects">
-        <header>
-          <h2>Projects</h2>
-        </header>
-        <section class="row">
-          <div class="col-sm-3 card" *ngFor="let project of projects">
-            <div class="projectImg">
-              <img *ngIf="project.img" src="assets/images/{{ project.img }}" alt="{{ project.name }}">
-              <i *ngIf="!project.img" class="material-icons md-80">settings</i>
-            </div>
-            <small>{{ project.name }}</small>
-          </div>
-        </section>
-      </div>
-    </li>
-    <li>
-      <div id="awards">
-        <header>
-          <h2>Awards</h2>
-        </header>
-        <section class="row">
-          <div class="col-sm-3 card" *ngFor="let award of awards">
-            <div class="projectImg">
-              <img *ngIf="award.img" src="assets/images/{{award.img}}" alt="{{ award.title }}">
-              <i *ngIf="!award.img" class="material-icons md-80">redeem</i>
-            </div>
-            <small>{{ award.title }}</small>
-          </div>
-          <div class="col-sm-3 card">
-            <div class="projectImg">
-              <img src="assets/images/UIplus.png" alt="more">
-            </div>
-            <small>And more...</small>
           </div>
         </section>
       </div>
