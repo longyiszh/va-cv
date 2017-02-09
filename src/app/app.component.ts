@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AppService } from './app.service';
 
 interface IUser {
   name: string,
@@ -57,127 +58,97 @@ interface IInterests {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [AppService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  constructor(private appService: AppService){
+  }
 
-  public user: IUser = {
-    name: "Valorad de la Septia",
-    avatar: "fallout_vaultboy_va.png",
-    field: "GIS/CS",
-    company: "Abstergo Entertainment",
-    position: "Project Manager"
-  };
+  public owner;
+  public ownerError: string;
+
+  public user: IUser= {
+    name: "",
+    company: "",
+    position: ""
+  }
 
   public info: IInfo = {
-    phone: "19216801010",
-    email: "wc@cc.com",
-    birthday: "1999-9-9",
-    php: "http://www.wcnexus.com"
-  };
+    phone: "",
+    email: "",
+  }
 
   public edu: IEdu = {
-    school: "Swadian College of Espionage Techniques",
-    major: "Reconnaissance and Field Stratagy",
-    gpa: "80%",
-    degree: "Bachelor of Engineering",
-    skills: [
-      "Seige engine construction: familiar with 40 types of Seige engine",
-      "Camouflage: passed INIT test with top 1% score",
-      "Archery: part of gift"
-    ],
+    school: "",
+    major: "",
+    degree: "",
+    skills: [],
   }
 
   public awards: [IAwards] = [
     {
-      title: "SC2terrible"
-    },
-    {
-      title: "BillyCDKofTheYear",
-      img: "icon_digital_key.png"
-    },
-    {
-      title: "Steam 200+",
-      img: "steam.png"
-    },
-    {
-      title: "2016 great Apple fan",
-      img: "Apple-icon.png"
+      title: []
     }
-  ];
+  ]
 
   public apply: IDesiredJobs = {
-    desiredjob: [
-      "Project Manager"
-    ]
-  };
+    desiredjob: []
+  }
 
   public workexp: [IWorkExp] = [
     {
       period: {
-        timeStart: new Date("2014/7/1"),
-        timeEnd: new Date("2014/8/1")
+        timeStart: new Date("1980/1/1"),
+        timeEnd: new Date("1980/1/1")
       },
-      company: "Facebook",
-      title: "Web Security Intern"
-    },
-    {
-      period: {
-        timeStart: new Date("2016/7/1"),
-        timeEnd: new Date("2016/9/1")
-      },
-      company: "Apple Inc.",
-      title: "Sales manager"
+      company: "",
+      title: ""
     }
   ]
 
   public projects: [IProjects] = [
     {
-      time: new Date("2016/1/1"),
-      name: "Fire cracker",
-      discr: "Demo detonator. I did CS work."
-    },
-    {
-      time: new Date("2016/3/1"),
-      name: "Psychic Amplifier",
-      discr: "Remote humanoid life-form sensor. I helped thesis reearch and collected materials."
-    },
-    {
-      time: new Date("2016/8/1"),
-      name: "Operation Snapshot",
-      discr: "Assigned to infiltrate an enemy hideout called Auditore mansion."
+      time: new Date("1980/1/1"),
+      name: "",
+      discr: ""
     }
-  ];
+  ]
 
   public proInterest: [IInterests] = [
     {
       cat: "professional",
-      interest: "Love little mechanisms"
-    },
-    {
-      cat: "professional",
-      interest: "Playing hide and seek"
-    },
-    {
-      cat: "professional",
-      interest: "Hacking terminals"
+      interest: ""
     }
-  ];
+  ]
 
   public perInterest: [IInterests] = [
     {
       cat: "personal",
-      interest: "Staying quiet"
-    },
-    {
-      cat: "personal",
-      interest: "Eating pu gai noodle"
-    },
-    {
-      cat: "personal",
-      interest: "Going fit"
+      interest: ""
     }
-  ];
+  ]
 
-  title = `${ this.user.name }'s Resume for ${ this.user.position } at ${ this.user.company }`;
+  ngOnInit() {
+    this.appService.getInfo().subscribe(
+      (resOwner) => { 
+        this.owner = resOwner;
+        this.user = this.owner[0].user;
+        this.info = this.owner[0].info;
+        this.edu = this.owner[0].edu;
+        this.awards = this.owner[0].awards;
+        this.apply = this.owner[0].apply;
+        this.workexp = this.owner[0].workexp;
+        this.projects = this.owner[0].projects;
+        this.proInterest = this.owner[0].proInterest;
+        this.perInterest = this.owner[0].perInterest;
+       },
+      (resOwnerError) => this.ownerError = resOwnerError
+    );
+  }
+ 
+
+
+
+  //title = `${ this.user.name }'s Resume for ${ this.user.position } at ${ this.user.company }`;
 }
