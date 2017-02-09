@@ -12,7 +12,7 @@ interface IUser {
 interface IInfo {
   phone: string,
   email: string,
-  birthday?: string,
+  birthday?: Date,
   php?: string
 }
 
@@ -133,15 +133,15 @@ export class AppComponent implements OnInit {
     this.appService.getInfo().subscribe(
       (resOwner) => { 
         this.owner = resOwner;
-        this.user = this.owner[0].user;
-        this.info = this.owner[0].info;
-        this.edu = this.owner[0].edu;
-        this.awards = this.owner[0].awards;
-        this.apply = this.owner[0].apply;
-        this.workexp = this.owner[0].workexp;
-        this.projects = this.owner[0].projects;
-        this.proInterest = this.owner[0].proInterest;
-        this.perInterest = this.owner[0].perInterest;
+        this.user = this.owner[1].user;
+        this.info = this.owner[1].info;
+        this.edu = this.owner[1].edu;
+        this.awards = this.owner[1].awards;
+        this.apply = this.owner[1].apply;
+        this.workexp = this.owner[1].workexp;
+        this.projects = this.owner[1].projects;
+        this.proInterest = this.owner[1].proInterest;
+        this.perInterest = this.owner[1].perInterest;
        },
       (resOwnerError) => this.ownerError = resOwnerError
     );

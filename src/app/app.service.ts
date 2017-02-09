@@ -8,7 +8,7 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class AppService {
-  private _url: string = "../assets/data/valorad.json";
+  private _url: string = "../assets/data/owner.json";
 
   constructor(private _http: Http) { }
 
@@ -23,6 +23,8 @@ export class AppService {
   extractData(res: Response) {
     let data = res.json() || [];
     data.forEach(medium => {
+      // birthday
+      medium.info.birthday = new Date(medium.info.birthday);
       // date in workexp
       medium.workexp.forEach(exp => {
         exp.period.timeStart = new Date(exp.period.timeStart);

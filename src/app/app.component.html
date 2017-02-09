@@ -18,7 +18,7 @@
         </header>
         <section class="row">
           <div class="col-sm-6">
-            <p><i class="material-icons md-20">cake</i><b>I was born on: </b> <span>{{ info.birthday }}</span></p>
+            <p><i class="material-icons md-20">cake</i><b>I was born on: </b> <span>{{ info.birthday|date:'y/M/d' }}</span></p>
           </div>
           <div class="col-sm-6">
             <p><i class="material-icons md-20">phone</i><b>Phone number:</b> <span>{{ info.phone }}</span></p>
