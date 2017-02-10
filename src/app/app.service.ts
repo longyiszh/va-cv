@@ -25,6 +25,10 @@ export class AppService {
     data.forEach(medium => {
       // birthday
       medium.info.birthday = new Date(medium.info.birthday);
+      // date in awards
+      medium.awards.time = new Date(medium.awards.time);
+      // date in projects
+      medium.projects.time = new Date(medium.projects.time);
       // date in workexp
       medium.workexp.forEach(exp => {
         exp.period.timeStart = new Date(exp.period.timeStart);

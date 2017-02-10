@@ -6,7 +6,7 @@ interface IUser {
   avatar?: string,
   field?: string,
   company: string,
-  position: string
+  // position: string
 }
 
 interface IInfo {
@@ -26,6 +26,8 @@ interface IEdu {
 
 interface IAwards {
   title: any,
+  level: string,
+  time: Date,
   img?: string
 }
 
@@ -46,6 +48,7 @@ interface IProjects {
   time: Date,
   name: string,
   discr: string,
+  whatIDid: string,
   img?: string
 }
 
@@ -68,10 +71,14 @@ export class AppComponent implements OnInit {
   public owner;
   public ownerError: string;
 
+  private selectOwnerID: number = 1;
+  public userDefaultAvatar: string = "default_avatar_assassin.png"
+
   public user: IUser= {
     name: "",
     company: "",
-    position: ""
+    // position: "",
+    avatar: this.userDefaultAvatar,
   }
 
   public info: IInfo = {
@@ -88,7 +95,9 @@ export class AppComponent implements OnInit {
 
   public awards: [IAwards] = [
     {
-      title: []
+      title: [],
+      level: "",
+      time: new Date("1980/1/1"),
     }
   ]
 
@@ -111,7 +120,8 @@ export class AppComponent implements OnInit {
     {
       time: new Date("1980/1/1"),
       name: "",
-      discr: ""
+      discr: "",
+      whatIDid: ""
     }
   ]
 
@@ -133,15 +143,15 @@ export class AppComponent implements OnInit {
     this.appService.getInfo().subscribe(
       (resOwner) => { 
         this.owner = resOwner;
-        this.user = this.owner[1].user;
-        this.info = this.owner[1].info;
-        this.edu = this.owner[1].edu;
-        this.awards = this.owner[1].awards;
-        this.apply = this.owner[1].apply;
-        this.workexp = this.owner[1].workexp;
-        this.projects = this.owner[1].projects;
-        this.proInterest = this.owner[1].proInterest;
-        this.perInterest = this.owner[1].perInterest;
+        this.user = this.owner[this.selectOwnerID].user;
+        this.info = this.owner[this.selectOwnerID].info;
+        this.edu = this.owner[this.selectOwnerID].edu;
+        this.awards = this.owner[this.selectOwnerID].awards;
+        this.apply = this.owner[this.selectOwnerID].apply;
+        this.workexp = this.owner[this.selectOwnerID].workexp;
+        this.projects = this.owner[this.selectOwnerID].projects;
+        this.proInterest = this.owner[this.selectOwnerID].proInterest;
+        this.perInterest = this.owner[this.selectOwnerID].perInterest;
        },
       (resOwnerError) => this.ownerError = resOwnerError
     );
