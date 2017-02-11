@@ -4,11 +4,11 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 import { CvService } from './cv.service';
 
 interface IUser {
-  name: string,
+  username: string,
+  fullname: string,
   avatar?: string,
   field?: string,
-  company: string,
-  // position: string
+  company: string
 }
 
 interface IInfo {
@@ -77,13 +77,14 @@ export class CvComponent implements OnInit {
   public urldata: {  };
 
   private selectOwnerID: number;
+  private selectOwnerName: string;
   public userDefaultAvatar: string = "default_avatar_assassin.png"
 
   public user: IUser= {
-    name: "",
+    username: "",
+    fullname: "",
     company: "",
-    // position: "",
-    avatar: this.userDefaultAvatar,
+    avatar: this.userDefaultAvatar
   }
 
   public info: IInfo = {
@@ -152,13 +153,35 @@ export class CvComponent implements OnInit {
 		)
   }
 
+  getOwnerName() {
+		this.actRoute.params.subscribe(
+			(params: Params) => {
+				this.selectOwnerName = params['name'];
+			}
+		)
+  }
+
   findOwnerId(name, data) {
     for(let owner of data) {
-      if(owner.name === name) {
+      if(owner.user.username === name) {
         return owner.id;
       }
     }
     return -1;
+  }
+
+  placeOwnerData() {
+    let owner = this.owners[this.selectOwnerID];
+    this.user.fullname = owner.user.fullname;
+    this.user.avatar = owner.user.avatar;
+    this.info = owner.info;
+    this.edu = owner.edu;
+    this.awards = owner.awards;
+    this.apply = owner.apply;
+    this.workexp = owner.workexp;
+    this.projects = owner.projects;
+    this.proInterest = owner.proInterest;
+    this.perInterest = owner.perInterest;
   }
 
   ngOnInit() {
@@ -166,19 +189,16 @@ export class CvComponent implements OnInit {
       (resOwner) => {
         this.owners = resOwner;
         if (this.urldata["viewBy"] === "id") {
-          this.getOwnerId()
-          let owner = this.owners[this.selectOwnerID];
-          this.user = owner.user;
-          this.info = owner.info;
-          this.edu = owner.edu;
-          this.awards = owner.awards;
-          this.apply = owner.apply;
-          this.workexp = owner.workexp;
-          this.projects = owner.projects;
-          this.proInterest = owner.proInterest;
-          this.perInterest = owner.perInterest;
-        }
+          this.getOwnerId();
+          this.placeOwnerData();
 
+        } else if (this.urldata["viewBy"] === "name") {
+          this.getOwnerName();
+          this.selectOwnerID = this.findOwnerId(this.selectOwnerName, this.owners);
+          this.placeOwnerData();
+        } else {
+          console.error("Unsupported viewBy param in route data.");
+        }
        },
       (resOwnerError) => this.ownerError = resOwnerError
     );
