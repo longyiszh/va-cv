@@ -1,0 +1,224 @@
+@import "../../assets/scss/_colors.scss";
+
+p {
+    margin-bottom: 0px;
+}
+
+header#cover {
+    background-image: url(assets/images/space.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-bottom: 0px;
+    h3, h4 {
+        color: ghostwhite;
+    }
+    h3#username {
+        margin-top:25px;
+        text-align: center;
+        font-size: 40px;
+    }
+    h4#pfFields {
+        text-align: center;
+    }
+}
+
+// #divCover {
+//     img {
+//         height: 200px;
+//     }
+// }
+
+#divAvatarHolder {
+    position: relative;
+    z-index: 50;
+    img {
+        margin: 0px auto;
+        width: 200px;
+        border: solid white 2px;
+    }
+}
+
+main {
+    padding: 0px;
+    ul.listSections {
+        list-style: none;
+        padding: 0px;
+        li {
+            div {
+                header {
+                    height: 45px;
+                    padding: 0px;
+                    h2 {
+                        width: 200px;
+                        margin: 0px;
+                        font-size: 23px;
+                        color: floralwhite;
+                        position: relative;
+                        top: 10px;
+                        left: 1em;
+                    }
+                }
+                section.row {
+                    margin: 2px 0em 4px 0em;;
+                    padding-left: 1em;
+                    width: 100%;
+                    div.card{
+                        text-align: center;
+                        margin-left: 10px;
+                        max-width: 180px;
+                        margin: 0.25rem 0.25rem 0.25rem 0rem;
+                        text-overflow: ellipsis;
+                        > p {
+                            margin-bottom: 0px;
+                        }
+
+                        div.projectImg{
+                            max-height: 80%;
+                            text-align: center;
+                            > img {
+                                margin-top: 10px;
+                                max-width: 80px;
+                            }
+                        }
+                    }
+                    ul > li {
+                        font-size: 12px;
+                    }
+                }
+            }
+            div#info {
+                header {
+                    background-color: $teal;
+                }
+                i.material-icons {
+                    color: $teal;
+                    position: relative;
+                    top: 5px;
+                    right: 9px;
+                }
+            }
+            div#edu {
+                header {
+                    background-color: $purple;
+                }
+                i.material-icons {
+                    color: $purple;
+                }
+            }
+            div#desiredJob {
+                header {
+                    background-color: $orange;
+                }
+            }
+            div#workExp {
+                header {
+                    background-color: $cyan;
+                }
+                section > div {
+                    margin-top: 5px;
+                    > table{
+                        thead {
+                            tr {
+                                background-color: $cyan-100;
+                            }
+                        }
+                        tbody {
+                            tr:nth-of-type(odd) {
+                                background-color: $cyan-50;
+                            }
+                        }
+                    }
+                }
+            }
+            div#interests {
+                header {
+                    background-color: $green;
+                }
+            }
+            div#projects {
+                header {
+                    background-color: $indigo;
+                }
+                i.material-icons {
+                    color: $indigo;
+                    position: relative;
+                    top: 10px;
+                }
+            }
+            div#awards {
+                header {
+                    background-color: $pink;
+                }
+                i.material-icons {
+                    color: $pink;
+                    position: relative;
+                    top: 10px;
+                }
+                .awardLvl {
+                    color: $pink;
+                }
+            }
+        } // <-- li
+    }
+}
+
+/* Responsive Settings Start*/
+
+/* Extra small devices (phones, less than 768px) */
+@media only screen and (max-width: 768px) {	
+    header#cover {
+        h3#fullTitle {
+            display: none;
+        }
+        h3#username {
+            display: block;
+        }
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    header#cover {
+        h3#fullTitle {
+            display: none;
+        }
+        h3#username {
+            display: block;
+        }       
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    h3#fullTitle {
+        display: block;
+    }
+    h3#username {
+        display: none;
+    }  
+    #divAvatarHolder {
+        float:right;
+    }
+    h4#pfFields {
+        float: left;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    h3#fullTitle {
+        display: block;
+    }
+    h3#username {
+        display: none;
+    }
+    #divAvatarHolder {
+        float:right;
+    }
+    h4#pfFields {
+        float: left;
+    }
+}
+
+/* Responsive Settings End*/
