@@ -11,11 +11,17 @@ const vacvRoute: Routes = [
     },
     {
         path:'id/:id',
-        component: CvComponent
+        component: CvComponent,
+        data: {
+            "viewBy": "id"
+        }
     },
     {
         path:'name/:name',
-        component: CvComponent
+        component: CvComponent,
+        data: {
+            "viewBy": "name"
+        }
     },
     {
         path:'**',

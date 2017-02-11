@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 
 import { CvService } from './cv.service';
 
@@ -66,12 +67,16 @@ interface IInterests {
 })
 export class CvComponent implements OnInit {
 
-  constructor(private appService: CvService) { }
+  constructor(private appService: CvService, private router: Router, private actRoute: ActivatedRoute) {
+    actRoute.data.subscribe((datium)=>{this.urldata = datium});
+  }
 
-  public owner;
+  public owners;
   public ownerError: string;
 
-  private selectOwnerID: number = 1;
+  public urldata: {  };
+
+  private selectOwnerID: number;
   public userDefaultAvatar: string = "default_avatar_assassin.png"
 
   public user: IUser= {
@@ -139,19 +144,41 @@ export class CvComponent implements OnInit {
     }
   ]
 
+  getOwnerId() {
+		this.actRoute.params.subscribe(
+			(params: Params) => {
+				this.selectOwnerID = parseInt(params['id']);
+			}
+		)
+  }
+
+  findOwnerId(name, data) {
+    for(let owner of data) {
+      if(owner.name === name) {
+        return owner.id;
+      }
+    }
+    return -1;
+  }
+
   ngOnInit() {
     this.appService.getInfo().subscribe(
-      (resOwner) => { 
-        this.owner = resOwner;
-        this.user = this.owner[this.selectOwnerID].user;
-        this.info = this.owner[this.selectOwnerID].info;
-        this.edu = this.owner[this.selectOwnerID].edu;
-        this.awards = this.owner[this.selectOwnerID].awards;
-        this.apply = this.owner[this.selectOwnerID].apply;
-        this.workexp = this.owner[this.selectOwnerID].workexp;
-        this.projects = this.owner[this.selectOwnerID].projects;
-        this.proInterest = this.owner[this.selectOwnerID].proInterest;
-        this.perInterest = this.owner[this.selectOwnerID].perInterest;
+      (resOwner) => {
+        this.owners = resOwner;
+        if (this.urldata["viewBy"] === "id") {
+          this.getOwnerId()
+          let owner = this.owners[this.selectOwnerID];
+          this.user = owner.user;
+          this.info = owner.info;
+          this.edu = owner.edu;
+          this.awards = owner.awards;
+          this.apply = owner.apply;
+          this.workexp = owner.workexp;
+          this.projects = owner.projects;
+          this.proInterest = owner.proInterest;
+          this.perInterest = owner.perInterest;
+        }
+
        },
       (resOwnerError) => this.ownerError = resOwnerError
     );
