@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 
+import { TranslateService } from 'ng2-translate';
+
 import { CvService } from './cv.service';
 
 interface IUser {
@@ -67,8 +69,23 @@ interface IInterests {
 })
 export class CvComponent implements OnInit {
 
-  constructor(private appService: CvService, private router: Router, private actRoute: ActivatedRoute) {
+  constructor(
+    private appService: CvService,
+    private router: Router,
+    private actRoute: ActivatedRoute,
+    private translate: TranslateService
+   ) {
     actRoute.data.subscribe((datium)=>{this.urldata = datium});
+    // translation service init
+    translate.addLangs(["en", "cn"]);
+    translate.setDefaultLang('en');
+    let browserLang = translate.getBrowserLang();
+    translate.use(browserLang.match(/en|cn/) ? browserLang : 'en');
+    //translate.use("cn");
+  }
+
+  changeLanguage(lang){
+      this.translate.use(lang);
   }
 
   public owners;

@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router'; 
 
+import { TranslateModule } from 'ng2-translate';
+
 import { CvModule } from './cv/cv.module'
 
 import { vacvRouting } from './app.route';
@@ -23,6 +25,8 @@ import { Http404Component } from './http404/http404.component';
     FormsModule,
     HttpModule,
     RouterModule,
+
+    TranslateModule.forRoot(),
 
     CvModule,
 
