@@ -1,3 +1,35 @@
 {
-    "testgrrrrr": "这是一个乱吼测试"
+    "cv": {
+        "perInfo": "个人信息",
+        "birthday": "生日",
+        "phone": "电话",
+        "email": "Email",
+        "php": "个人主页",
+
+        "edu": "教育经历",
+        "gradFrom": "毕业于",
+        "majorIn": "专业是",
+        "gpa": "绩点",
+        "skill": "特长",
+        "degree": "获得学位",
+
+        "desiredJob": "期望职位",
+
+        "projects": "项目",
+
+        "workExp": "工作经历",
+        "period": "时段",
+        "company": "公司",
+        "title": "职位",
+        "time": "时间",
+        "project": "项目",
+        "wid": "所做工作",
+
+        "interests": "兴趣爱好",
+        "proInterests": "职业兴趣",
+        "perInterests": "个人兴趣",
+
+        "awards": "荣誉表彰",
+        "andMore": "以及更多..."
+    }
 }

@@ -1,3 +1,35 @@
 {
-    "testgrrrrr": "this is an angry test"
+    "cv": {
+        "perInfo": "Personal Info",
+        "birthday": "I was born on",
+        "phone": "Phone",
+        "email": "Email",
+        "php": "Home page",
+
+        "edu": "Education",
+        "gradFrom": "Graduated from",
+        "majorIn": "Major in",
+        "gpa": "GPA",
+        "skill": "Skills",
+        "degree": "Achieved degree",
+
+        "desiredJob": "Desired Job",
+
+        "projects": "Projects",
+
+        "workExp": "Work Experience",
+        "period": "Period",
+        "company": "Company",
+        "title": "Title",
+        "time": "Time",
+        "project": "Project",
+        "wid": "What I did",
+
+        "interests": "Interests",
+        "proInterests": "Professional Interests",
+        "perInterests": "Personal Interests",
+
+        "awards": "Awards",
+        "andMore": "And more..."
+    }
 }
