@@ -1,8 +1,8 @@
 <header id="cover" class="jumbotron jumbotron-fluid">
   <div class="container">
     <div id="divAvatarHolder">
-      <img *ngIf="user.avatar===(null||undefined||'')" class="img-fluid img-circle" src="assets/images/{{ userDefaultAvatar }}" alt="{{ user.name }}">
-      <img *ngIf="user.avatar!==(null||undefined||'')" class="img-fluid img-circle" src="assets/images/{{ user.avatar }}" alt="{{ user.name }}">
+      <img *ngIf="user.avatar===(null||undefined||'')" class="img-fluid img-circle" src="assets/images/{{ userDefaultAvatar }}" alt="{{ user.fullname }}">
+      <img *ngIf="user.avatar!==(null||undefined||'')" class="img-fluid img-circle" src="assets/media/{{ selectOwnerID }}/{{ user.avatar }}" alt="{{ user.fullname }}">
     </div>
     <h3 id="fullTitle">{{ title }}</h3>
     <h3 id="username">{{ user.fullname }}</h3>
