@@ -203,6 +203,16 @@ main {
     h4#pfFields {
         float: left;
     }
+    div#info {
+        section.row {
+            position: relative;
+            bottom: 50px;
+            margin-bottom: -16px;
+            div > p {
+                margin: 5px 0px 5px 0px;
+            }
+        }
+    }
 }
 
 /* Large devices (large desktops, 1200px and up) */
@@ -218,6 +228,13 @@ main {
     }
     h4#pfFields {
         float: left;
+    }
+    div#info {
+        section.row {
+            position: relative;
+            bottom: 71px;
+            margin-bottom: -50px;
+        }
     }
 }
 
