@@ -8,7 +8,7 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class CvService {
-  private _url: string = "../assets/data/owner.json";
+  private _url: string = "../assets/data/owner_en.json";
 
   constructor(private _http: Http) { }
 
