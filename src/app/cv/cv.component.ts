@@ -77,11 +77,11 @@ export class CvComponent implements OnInit {
    ) {
     actRoute.data.subscribe((datium)=>{this.urldata = datium});
     // translation service init
-    translate.addLangs(["en", "cn"]);
+    translate.addLangs(["en", "zh"]);
     translate.setDefaultLang('en');
     let browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|cn/) ? browserLang : 'en');
-    //translate.use("cn");
+    translate.use(browserLang.match(/en|zh/) ? browserLang : 'en');
+    //translate.use("en");
   }
 
   changeLanguage(lang){
