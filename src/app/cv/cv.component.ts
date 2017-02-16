@@ -95,13 +95,13 @@ export class CvComponent implements OnInit {
 
   private selectOwnerID: number;
   private selectOwnerName: string;
-  public userDefaultAvatar: string = "default_avatar_assassin.png"
+  public userDefaultAvatar: string = "default_avatar_assassin.png";
 
   public user: IUser= {
     username: "",
     fullname: "",
     company: "",
-    avatar: this.userDefaultAvatar
+    avatar: null
   }
 
   public info: IInfo = {
@@ -190,6 +190,7 @@ export class CvComponent implements OnInit {
   placeOwnerData() {
     let owner = this.owners[this.selectOwnerID];
     this.user.fullname = owner.user.fullname;
+    //this.user.username = owner.user.username;
     this.user.avatar = owner.user.avatar;
     this.info = owner.info;
     this.edu = owner.edu;

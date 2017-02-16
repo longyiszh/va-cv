@@ -44,3 +44,4 @@ Thumbs.db
 # site specific
 /src/assets/data
 .vscode/settings.json
+/src/assets/media
