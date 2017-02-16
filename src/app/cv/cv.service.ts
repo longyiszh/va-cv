@@ -6,11 +6,27 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 
+import { TranslateService } from 'ng2-translate';
+
 @Injectable()
 export class CvService {
+  
   private _url: string = "../assets/data/owner_en.json";
 
-  constructor(private _http: Http) { }
+  constructor(
+    private _http: Http,
+    private translate: TranslateService) { 
+      this._url = `../assets/data/${this.getCurrentLanguage()}`;
+    }
+
+  getCurrentLanguage(): string {
+    let brlanguage = this.translate.getBrowserLang();
+    let dataFile = brlanguage.match(/en|zh/) ? `owner_${brlanguage}.json` : 'owner_en.json';
+
+    //dataFile = "owner_en.json"
+
+    return dataFile;
+  }
 
   getInfo() {
     let info = this._http.get(this._url)
