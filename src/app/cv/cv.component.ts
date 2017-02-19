@@ -190,7 +190,7 @@ export class CvComponent implements OnInit {
   placeOwnerData() {
     let owner = this.owners[this.selectOwnerID];
     this.user.fullname = owner.user.fullname;
-    //this.user.username = owner.user.username;
+    this.user.field = owner.user.field;
     this.user.avatar = owner.user.avatar;
     this.info = owner.info;
     this.edu = owner.edu;
