@@ -44,6 +44,7 @@
             <p><b>{{ 'cv.gradFrom' | translate }}</b> <span>{{ edu.school }}</span></p>
             <p><b>{{ 'cv.majorIn' | translate }} </b> <span>{{ edu.major }}</span></p>
             <p><b>{{ 'cv.gpa' | translate }}: </b> <span>{{ edu.gpa }}</span></p>
+            <p><b>{{ 'cv.degree' | translate }}: </b> <span>{{ edu.degree }}</span></p>
           </div>
           <div class="col-md-6">
               <b>{{ 'cv.skill' | translate }}:</b>
@@ -51,7 +52,6 @@
                 <li *ngFor="let skill of edu.skills">{{ skill }}</li>
               </ul>
           </div>
-          <div class="col-md-6"><p><b>{{ 'cv.degree' | translate }}: </b> <span>{{ edu.degree }}</span></p></div>
         </section>
       </div>
     </li>
