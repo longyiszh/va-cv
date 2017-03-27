@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 
-import { TranslateService } from 'ng2-translate';
-
+import { TranslateService } from '@ngx-translate/core';
 import { CvService } from './cv.service';
+
 
 interface IUser {
   username: string,
@@ -65,7 +65,7 @@ interface IInterests {
   selector: 'app-cv',
   templateUrl: './cv.component.html',
   styleUrls: ['./cv.component.scss'],
-  providers: [CvService]
+  providers: [TranslateService]
 })
 export class CvComponent implements OnInit {
 

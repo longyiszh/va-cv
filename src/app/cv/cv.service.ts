@@ -6,17 +6,17 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 
-import { TranslateService } from 'ng2-translate';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
 export class CvService {
   
-  private _url: string = "../assets/data/owner_en.json";
+  private _url: string = "assets/data/owner_en.json";
 
   constructor(
     private _http: Http,
     private translate: TranslateService) { 
-      this._url = `../assets/data/${this.getCurrentLanguage()}`;
+      this._url = `assets/data/${this.getCurrentLanguage()}`;
     }
 
   getCurrentLanguage(): string {

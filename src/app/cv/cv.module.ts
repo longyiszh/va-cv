@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { TranslateModule } from 'ng2-translate';
+import { TranslateModule } from '@ngx-translate/core';
+
+import { CvService } from './cv.service';
 
 import { CvComponent } from './cv.component';
 
@@ -12,6 +14,7 @@ import { CvComponent } from './cv.component';
   ],
   declarations: [
     CvComponent
-  ]
+  ],
+  providers: [CvService]
 })
 export class CvModule { }
