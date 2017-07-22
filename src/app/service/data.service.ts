@@ -62,4 +62,16 @@ export class DataService {
     return this.http.delete(url).map(res => res.json());
   };
 
+  formatDate: (date: any) => Date = (date: any) => {
+    let formatedDate: Date;
+    if (typeof date === 'string') {
+        formatedDate = new Date(date);
+    } else if (date instanceof Date){
+        formatedDate = date;
+    } else {
+        formatedDate = null;
+    }
+    return formatedDate;
+  };
+
 }

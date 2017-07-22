@@ -105,17 +105,9 @@ export class CvComponent implements OnInit {
     avatar: null
   }
 
-  public info: IInfo = {
-    phone: "",
-    email: "",
-  }
+  public info: any = {};
 
-  public edu: IEdu = {
-    school: "",
-    major: "",
-    degree: "",
-    skills: [],
-  }
+  public edu: any = {};
 
   public awards: [IAwards] = [
     {

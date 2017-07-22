@@ -84,19 +84,20 @@ export class CvService {
     let data = res.json() || [];
     data.forEach(medium => {
       // birthday
-      medium.info.birthday = new Date(medium.info.birthday);
+
+      medium.info.birthday = this.dataService.formatDate(medium.info.birthday);
       // date in awards
-      medium.awards.time = new Date(medium.awards.time);
+      medium.awards.time = this.dataService.formatDate(medium.awards.time);
       // date in projects
-      medium.projects.time = new Date(medium.projects.time);
+      medium.projects.time = this.dataService.formatDate(medium.projects.time);
       // date in workexp
       medium.workexp.forEach(exp => {
-        exp.period.timeStart = new Date(exp.period.timeStart);
-        exp.period.timeEnd = new Date(exp.period.timeEnd);
+        exp.period.timeStart = this.dataService.formatDate(exp.period.timeStart);
+        exp.period.timeEnd = this.dataService.formatDate(exp.period.timeEnd);
       });
       //date in projects
       medium.projects.forEach(project => {
-        project.time = new Date(project.time);
+        project.time = this.dataService.formatDate(project.time);
       });
     });
     return data;
