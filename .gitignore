@@ -42,7 +42,10 @@ Thumbs.db
 
 
 # site specific
-/src/assets/data
+/src/assets/data/*
+!/src/assets/data/owner_default_en.json
+!/src/assets/data/owner_default_zh.json
+/src/assets/media/*
+!/src/assets/media/0
 .vscode/settings.json
-/src/assets/media
 *.lock
