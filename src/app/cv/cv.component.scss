@@ -32,6 +32,7 @@ header#cover {
 #divAvatarHolder {
     position: relative;
     z-index: 50;
+    text-align: center;
     img {
         margin: 0px auto;
         width: 200px;
@@ -63,22 +64,29 @@ main {
                     margin: 2px 0em 4px 0em;;
                     padding-left: 1em;
                     width: 100%;
-                    div.card{
+                    md-card {
                         text-align: center;
-                        margin-left: 10px;
+                        padding: 1em 0px;
+                        //margin-left: 10px;
                         max-width: 180px;
                         margin: 0.25rem 0.25rem 0.25rem 0rem;
                         text-overflow: ellipsis;
-                        > p {
-                            margin-bottom: 0px;
-                        }
 
-                        div.projectImg{
+                        md-card-title.projectImg {
                             max-height: 80%;
                             text-align: center;
-                            > img {
+                            img {
                                 margin-top: 10px;
                                 max-width: 80px;
+                            }
+                            i {
+                                margin-top: 10px;
+                                font-size: 70px;
+                            }
+                        }
+                        md-card-content {
+                            > p {
+                                margin-bottom: 0px;
                             }
                         }
                     }
@@ -162,6 +170,25 @@ main {
         } // <-- li
     }
 }
+
+div.andMore {
+    text-align: center;
+    padding-top: 1.5em;
+    max-width: 180px;
+    div.projectImg {
+        max-height: 80%;
+        img {
+            margin-top: 10px;
+            max-width: 80px;
+        }
+        i {
+            margin-top: 10px;
+            font-size: 70px;
+        }
+    }
+}
+
+
 
 /* Responsive Settings Start*/
 

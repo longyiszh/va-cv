@@ -73,21 +73,23 @@
           <h2>{{ 'cv.projects' | translate }}</h2>
         </header>
         <section class="row">
-          <div class="col-sm-3 card" *ngFor="let project of projects">
-            <div class="projectImg">
+          <md-card class="col-sm-3" *ngFor="let project of projects">
+            <md-card-title class="projectImg">
               <img *ngIf="project.img" src="assets/images/{{ project.img }}" alt="{{ project.name }}">
               <i *ngIf="!project.img" class="material-icons md-80">settings</i>
-            </div>
-            <p>
-              <b>{{ project.name }}</b>
-            </p>
-            <p>
-              <small>{{ project.time|date:'y/M' }}</small>
-            </p>
-            <p>
-              <small>{{ project.whatIDid }}</small>
-            </p>
-          </div>
+            </md-card-title>
+            <md-card-content>
+              <p>
+                <b>{{ project.name }}</b>
+              </p>
+              <p>
+                <small>{{ project.time|date:'y/M' }}</small>
+              </p>
+              <p>
+                <small>{{ project.whatIDid }}</small>
+              </p>
+            </md-card-content>
+          </md-card>
         </section>
       </div>
     </li>
@@ -167,42 +169,36 @@
           <h2>{{ 'cv.awards' | translate }}</h2>
         </header>
         <section class="row">
-          <div class="col-sm-3 card" *ngFor="let award of awards">
-            <div class="projectImg">
+          <md-card class="col-sm-3" *ngFor="let award of awards">
+            <md-card-title class="projectImg">
               <img *ngIf="award.img" src="assets/images/{{award.img}}" alt="{{ award.title }}">
               <i *ngIf="!award.img" class="material-icons md-80">redeem</i>
-            </div>
-            <p>
-              <b>{{ award.title }}</b>
-            </p>
-            <p>
-              <small>{{ award.time|date:'y/M' }}</small>
-            </p>
-            <p>
-              <small class="awardLvl">{{ award.level }}</small>
-            </p>
-          </div>
-          <div class="col-sm-3 card">
+            </md-card-title>
+            <md-card-content>
+              <p>
+                <b>{{ award.title }}</b>
+              </p>
+              <p>
+                <small>{{ award.time|date:'y/M' }}</small>
+              </p>
+              <p>
+                <small class="awardLvl">{{ award.level }}</small>
+              </p>
+            </md-card-content>
+          </md-card>
+
+          <div class="col-sm-3 andMore">
             <div class="projectImg">
               <img src="assets/images/UIplus.png" alt="more">
             </div>
-            <small>{{ 'cv.andMore' | translate }}</small>
+            <main>
+              <small>{{ 'cv.andMore' | translate }}</small>
+            </main>
           </div>
+
         </section>
       </div>
     </li>
   </ul>
 </main>
-
-<!--<div class="container">
-  <div class="col-lg-12">
-    <a class="btn btn-primary">Click</a>
-  </div>
-</div>-->
-  <!--<div class="form-group label-static">
-    <label for="i2" class="control-label">label-static</label>
-    <input type="email" class="form-control" id="i2" placeholder="placeholder attribute">
-
-    <p class="help-block">This is a hint as a <code>p.help-block.hint</code></p>
-  </div>-->
 

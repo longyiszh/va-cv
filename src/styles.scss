@@ -1,5 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import 'variables'; 
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+// img-circle patch
+.img-circle {
+    border-radius: 50%;
+}
+
 /* Responsive Settings Start*/
 
 /* Extra small devices (phones, less than 768px) */
