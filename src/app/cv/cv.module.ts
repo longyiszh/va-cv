@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { TranslateModule } from '@ngx-translate/core';
 
+import { MdModule } from '../utilModule/md.module';
+
 import { CvService } from './cv.service';
 
 import { CvComponent } from './cv.component';
@@ -10,7 +12,9 @@ import { CvComponent } from './cv.component';
 @NgModule({
   imports: [
     CommonModule,
-    TranslateModule
+    TranslateModule,
+
+    MdModule
   ],
   declarations: [
     CvComponent

@@ -45,3 +45,4 @@ Thumbs.db
 /src/assets/data
 .vscode/settings.json
 /src/assets/media
+*.lock
