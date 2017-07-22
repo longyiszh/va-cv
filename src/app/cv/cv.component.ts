@@ -94,7 +94,7 @@ export class CvComponent implements OnInit {
 
   public urldata: {  };
 
-  private selectOwnerID: number;
+  private selectOwnerID: number = 0;
   private selectOwnerName: string;
   public userDefaultAvatar: string = "default_avatar_assassin.png";
 
