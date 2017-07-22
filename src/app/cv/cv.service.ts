@@ -2,41 +2,86 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/throw';
 
 import { TranslateService } from '@ngx-translate/core';
+
+import { DataService } from '../service/data.service'
 
 @Injectable()
 export class CvService {
   
-  private _url: string = "assets/data/owner_en.json";
+  private dataPath = "assets/data";
+  //private _url: string = "owner_en.json";
+  private defaultFilename: string = "owner_default";
+  private filename: string = "owner";// also owner_default_en.json
+  private lang: string = "en";
+  private fileType: string = "json";
 
   constructor(
-    private _http: Http,
+    //private _http: Http,
+    private dataService: DataService,
     private translate: TranslateService) { 
-      this._url = `assets/data/${this.getCurrentLanguage()}`;
+      this.lang = this.getCurrentLanguage();
     }
 
   getCurrentLanguage(): string {
     let brlanguage = this.translate.getBrowserLang();
-    let dataFile = brlanguage.match(/en|zh/) ? `owner_${brlanguage}.json` : 'owner_en.json';
+    let lang = brlanguage.match(/en|zh/) ? `${brlanguage}` : 'en';
 
-    //dataFile = "owner_en.json"
+    //lang = "zh"
 
-    return dataFile;
+    return lang;
   }
 
-  getInfo() {
-    let info = this._http.get(this._url)
-      .map(this.extractData)
-      .catch(this.throwException);
+  // getInfo() {
+  //   let info = this._http.get(this._url)
+  //     .map(this.extractData)
+  //     .catch(this.throwException);
 
-    return info;
-  }
+  //   return info;
+  // }
 
-  extractData(res: Response) {
+  private getInfo: (isDefault?)=> Promise<any> = (isDefault = false) => {
+    let url: string = `${this.dataPath}/${this.filename}_${this.lang}.${this.fileType}`;
+    if (isDefault) {
+      url = `${this.dataPath}/${this.defaultFilename}_${this.lang}.${this.fileType}`;
+      console.log(url);
+    }
+    return new Promise((resolve, reject) => {
+      this.dataService.getCookedData(url, this.extractData).subscribe(
+        (resData) => {
+          resolve(resData);
+        },
+        (resError) => {
+          reject(resError);
+        }
+      );
+    });
+  };
+
+  public getCVData: ()=> Promise<any> = () => {
+    return new Promise((resolve, reject) => {
+      this.getInfo().then(
+        (resData) => { // found custom data
+          resolve(resData);
+        },
+        (error) => { //unable to find custom data then fall back to default
+          this.getInfo(true).then(
+            (resData) => {
+              resolve(resData);
+            },
+            (error) => { // default data is also lost then gg
+              reject(error);
+            }
+          );
+          console.warn("no custom data found, falling back to default");
+        }
+      );
+    });
+
+  };
+
+  private extractData: (res: Response)=> any = (res: Response) => {
     let data = res.json() || [];
     data.forEach(medium => {
       // birthday
@@ -58,8 +103,4 @@ export class CvService {
     return data;
   }
 
-  throwException(error: Response) {
-    console.error(error);
-    return Observable.throw(error || "Server Error");
-  }
 }

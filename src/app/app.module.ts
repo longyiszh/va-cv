@@ -19,6 +19,8 @@ import { CvModule } from './cv/cv.module'
 
 import { vacvRouting } from './app.route';
 
+import { DataService } from './service/data.service'
+
 import { AppComponent } from './app.component';
 import { Http404Component } from './http404/http404.component';
 
@@ -56,7 +58,7 @@ const angularModules = [
 
     vacvRouting
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

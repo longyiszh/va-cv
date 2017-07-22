@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
+import { Response } from '@angular/http';
 
 import { TranslateService } from '@ngx-translate/core';
 import { CvService } from './cv.service';
@@ -70,7 +71,7 @@ interface IInterests {
 export class CvComponent implements OnInit {
 
   constructor(
-    private appService: CvService,
+    private cvService: CvService,
     private router: Router,
     private actRoute: ActivatedRoute,
     private translate: TranslateService
@@ -203,13 +204,32 @@ export class CvComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.appService.getInfo().subscribe(
-      (resOwner) => {
-        this.owners = resOwner;
+    // this.appService.getInfo().subscribe(
+    //   (resOwner) => {
+    //     this.owners = resOwner;
+    //     if (this.urldata["viewBy"] === "id") {
+    //       this.getOwnerId();
+    //       this.placeOwnerData();
+
+    //     } else if (this.urldata["viewBy"] === "name") {
+    //       this.getOwnerName();
+    //       this.selectOwnerID = this.findOwnerId(this.selectOwnerName, this.owners);
+    //       this.placeOwnerData();
+    //     } else {
+    //       console.error("Unsupported viewBy param in route data.");
+    //     }
+    //    },
+    //   (resOwnerError) => this.ownerError = resOwnerError
+    // );
+    this.loadData();
+  }
+  private loadData: ()=> any = () => {
+    this.cvService.getCVData().then(
+      (ownerData) => {
+        this.owners = ownerData;
         if (this.urldata["viewBy"] === "id") {
           this.getOwnerId();
           this.placeOwnerData();
-
         } else if (this.urldata["viewBy"] === "name") {
           this.getOwnerName();
           this.selectOwnerID = this.findOwnerId(this.selectOwnerName, this.owners);
@@ -217,8 +237,14 @@ export class CvComponent implements OnInit {
         } else {
           console.error("Unsupported viewBy param in route data.");
         }
-       },
-      (resOwnerError) => this.ownerError = resOwnerError
+      },
+      (error: Response) => {
+        console.error("failed to load data");
+      }
     );
+
+
   }
 }
+
+
