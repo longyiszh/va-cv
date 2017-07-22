@@ -45,7 +45,6 @@ export class CvService {
     let url: string = `${this.dataPath}/${this.filename}_${this.lang}.${this.fileType}`;
     if (isDefault) {
       url = `${this.dataPath}/${this.defaultFilename}_${this.lang}.${this.fileType}`;
-      console.log(url);
     }
     return new Promise((resolve, reject) => {
       this.dataService.getCookedData(url, this.extractData).subscribe(
