@@ -117,9 +117,7 @@ export class CvComponent implements OnInit {
     }
   ]
 
-  public apply: IDesiredJobs = {
-    desiredjob: []
-  }
+  public apply: IDesiredJobs = null;
 
   public workexp: [IWorkExp] = [
     {

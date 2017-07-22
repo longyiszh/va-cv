@@ -13,5 +13,5 @@ export class AppComponent {
 
 
 
-  //title = `${ this.user.name }'s Resume for ${ this.user.position } at ${ this.user.company }`;
+
 }
