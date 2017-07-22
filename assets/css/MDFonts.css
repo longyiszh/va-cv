@@ -58,11 +58,59 @@
 }
 
 /* -- Simplified Chinese Characters -- */
-@font-face {
-  font-family: 'NSMCJK';
-  font-style: normal;
-  font-weight: 400;
-  src: local('NotoSansMonoCJKsc'), local('NotoSansCJKsc-Regular'), url(../fonts/NotoSansMonoCJKsc/NotoSansCJKsc-Regular-Alphabetic.woff2) format('woff2');
-  unicode-range: U+4E00-9FA5;
-}
 
+/*
+
+    Pretend to be Roboto. In fact, Chinese Characters are all :
+
+    font-family: 'Noto Sans SC';
+
+*/
+
+ @font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: url(//fonts.gstatic.com/ea/notosanssc/v1/NotoSansSC-Thin.woff2) format('woff2');
+  unicode-range: U+4E00-9FCB;
+
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: url(//fonts.gstatic.com/ea/notosanssc/v1/NotoSansSC-Light.woff2) format('woff2');
+  unicode-range: U+4E00-9FCB;
+
+}
+@font-face {
+   font-family: 'Roboto';
+   font-style: normal;
+   font-weight: 400;
+   src: url(//fonts.gstatic.com/ea/notosanssc/v1/NotoSansSC-Regular.woff2) format('woff2');
+   unicode-range: U+4E00-9FCB;
+
+ }
+@font-face {
+   font-family: 'Roboto';
+   font-style: normal;
+   font-weight: 500;
+   src: url(//fonts.gstatic.com/ea/notosanssc/v1/NotoSansSC-Medium.woff2) format('woff2');
+   unicode-range: U+4E00-9FCB;
+
+ }
+@font-face {
+   font-family: 'Roboto';
+   font-style: normal;
+   font-weight: 700;
+   src: url(//fonts.gstatic.com/ea/notosanssc/v1/NotoSansSC-Bold.woff2) format('woff2');
+   unicode-range: U+4E00-9FCB;
+
+ }
+@font-face {
+   font-family: 'Roboto';
+   font-style: normal;
+   font-weight: 900;
+   src: url(//fonts.gstatic.com/ea/notosanssc/v1/NotoSansSC-Black.woff2) format('woff2');
+   unicode-range: U+4E00-9FCB;
+ }

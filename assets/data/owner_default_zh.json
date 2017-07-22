@@ -5,24 +5,22 @@
             "username": "valorad",
             "fullname": "Valorad de la Septia",
             "avatar": "fallout_vaultboy_va.png",
-            "field": "Recon/Engineer",
-            "company": "Abstergo Entertainment"
+            "field": "计算机 单身喵 伪学霸 RPG粉",
+            "company": " - "
         },
         "info": {
-            "phone": "19216801010",
-            "email": "wc@cc.com",
-            "birthday": "1999/9/9",
-            "php": "http://www.wcnexus.com"
+            "php": "http://www.wcnexus.com",
+            "steam": "wcxaaa"
         },
         "edu": {
-            "school": "Swadian College of Espionage Techniques",
-            "major": "Reconnaissance and Field Stratagy",
+            "school": " - ",
+            "major": " - ",
             "gpa": "80%",
-            "degree": "Bachelor of Engineering",
+            "degree": " - ",
             "skills": [
-                "Seige engine construction: familiar with 40 types of Seige engine",
-                "Camouflage: passed INIT test with top 1% score",
-                "Archery: part of gift"
+                "熟练掌握C#, Javascript(包括Typescript等), Python等热门编程语言",
+                "了解热门前端框架: Bootstrap, Angular等",
+                "研究过包括但不限于《上古卷轴》《骑马与砍杀》《红色警戒》等游戏的mod技术，制作过大小型mod共计10余个"
             ]
         },
         "awards": [
