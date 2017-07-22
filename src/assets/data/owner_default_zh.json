@@ -1,0 +1,123 @@
+[
+    {
+        "id": 0,
+        "user": {
+            "username": "valorad",
+            "fullname": "Valorad de la Septia",
+            "avatar": "fallout_vaultboy_va.png",
+            "field": "计算机 单身喵 伪学霸 RPG粉",
+            "company": " - "
+        },
+        "info": {
+            "php": "http://www.wcnexus.com",
+            "steam": "wcxaaa"
+        },
+        "edu": {
+            "school": " - ",
+            "major": " - ",
+            "gpa": "80%",
+            "degree": " - ",
+            "skills": [
+                "熟练掌握C#, Javascript(包括Typescript等), Python等热门编程语言",
+                "了解热门前端框架: Bootstrap, Angular等",
+                "研究过包括但不限于《上古卷轴》《骑马与砍杀》《红色警戒》等游戏的mod技术，制作过大小型mod共计10余个"
+            ]
+        },
+        "awards": [
+            {
+                "title": "SC2terrible",
+                "level": "",
+                "time": "2016/1/1"
+            },
+            {
+                "title": "BillyCDKofTheYear",
+                "img": "icon_digital_key.png",
+                "level": "",
+                "time": "2016/12/25"
+            },
+            {
+                "title": "Steam 200+",
+                "img": "steam.png",
+                "level": "",
+                "time": "2017/1/1"
+            },
+            {
+                "title": "2016 great Apple fan",
+                "img": "Apple-icon.png",
+                "level": "",
+                "time": "2016/12/20"
+            }
+        ],
+        "apply": {
+            "desiredjob": [
+                "Database Manager"
+            ]
+        },
+        "workexp": [
+            {
+                "period": {
+                    "timeStart": "2014/7/1",
+                    "timeEnd": "2014/8/1"
+                },
+                "company": "Facebook",
+                "title": "Web Security Intern"
+            },
+            {
+                "period": {
+                    "timeStart": "2016/7/1",
+                    "timeEnd": "2016/9/1"
+                },
+                "company": "Apple Inc.",
+                "title": "Sales manager"
+            }
+        ],
+        "projects": [
+            {
+                "time": "2016/1/1",
+                "name": "Fire cracker",
+                "discr": "Demo detonator.",
+                "whatIDid": "I did CS work."
+            },
+            {
+                "time": "2016/3/1",
+                "name": "Psychic Amplifier",
+                "discr": "Remote humanoid life-form sensor.",
+                "whatIDid": "Thesis reearch, collected materials."
+            },
+            {
+                "time": "2016/8/1",
+                "name": "Operation Snapshot",
+                "discr": "Assignment",
+                "whatIDid": "infiltrated Auditore mansion."
+            }
+        ],
+        "proInterest": [
+            {
+                "cat": "professional",
+                "interest": "Love little mechanisms"
+            },
+            {
+                "cat": "professional",
+                "interest": "Playing hide and seek"
+            },
+            {
+                "cat": "professional",
+                "interest": "Hacking terminals"
+            }
+        ],
+        "perInterest": [
+            {
+                "cat": "personal",
+                "interest": "Staying quiet"
+            },
+            {
+                "cat": "personal",
+                "interest": "Eating pu gai noodle"
+            },
+            {
+                "cat": "personal",
+                "interest": "Going fit"
+            }
+        ]
+    }
+]
