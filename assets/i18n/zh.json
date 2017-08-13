@@ -6,6 +6,9 @@
         "email": "Email",
         "php": "个人主页",
         "steam": "Steam",
+        "github": "Github",
+        "weibo": "微博",
+        "twitter": "推",
 
         "edu": "教育经历",
         "gradFrom": "毕业于",
@@ -25,12 +28,17 @@
         "time": "时间",
         "project": "项目",
         "wid": "所做工作",
+        "now": "现在",
 
         "interests": "兴趣爱好",
         "proInterests": "职业兴趣",
         "perInterests": "个人兴趣",
 
         "awards": "荣誉表彰",
-        "andMore": "以及更多..."
+        "andMore": "以及更多...",
+
+        "other": "其他",
+        "vacvDescr": "本简历为Angular4单页面程序，采用了Bootstrap框架与Material design设计风格，同时根据您的浏览器语言自动切换英语与简体中文。前端页面代码位于我的Github仓库，欢迎您的围观！",
+        "alsoVisitOnlineVer": "您也可围观本简历的网页版，感谢您的斟阅！"
     }
 }
