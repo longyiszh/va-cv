@@ -19,22 +19,28 @@
         </header>
         <section class="row">
            <div class="col-sm-6" *ngIf="info.birthday">
-             <p><i class="material-icons md-20">cake</i><b>{{ 'cv.birthday' | translate }}: </b> <span>{{ info.birthday|date:'y/M/d' }}</span></p> 
+             <p><i class="material-icons" aria-hidden="true">cake</i><b>{{ 'cv.birthday' | translate }}: </b> <span>{{ info.birthday|date:'y/M/d' }}</span></p> 
           </div> 
           <div class="col-sm-6" *ngIf="info.phone">
-            <p><i class="material-icons md-20">phone</i><b>{{ 'cv.phone' | translate }}:</b> <span>{{ info.phone }}</span></p>
+            <p><i class="material-icons" aria-hidden="true">phone</i><b>{{ 'cv.phone' | translate }}:</b> <span>{{ info.phone }}</span></p>
           </div>
           <div class="col-sm-6" *ngIf="info.email">
-            <p><i class="material-icons md-20">email</i><b>{{ 'cv.email' | translate }}: </b> <span>{{ info.email }}</span></p>
+            <p><i class="material-icons" aria-hidden="true">email</i><b>{{ 'cv.email' | translate }}: </b> <span>{{ info.email }}</span></p>
           </div>
           <div class="col-sm-6" *ngIf="info.php">
-            <p><i class="material-icons md-20">home</i><b>{{ 'cv.php' | translate }}: </b> <span>{{ info.php }}</span></p>
+            <p><i class="material-icons" aria-hidden="true">home</i><b>{{ 'cv.php' | translate }}: </b> <span>{{ info.php }}</span></p>
           </div>
           <div class="col-sm-6" *ngIf="info.steam">
-            <p><i class="material-icons md-20">Steam</i><b>{{ 'cv.steam' | translate }}: </b> <span>{{ info.steam }}</span></p>
+            <p><i class="fa fa-steam" aria-hidden="true"></i><b>{{ 'cv.steam' | translate }}: </b> <img class="img-fluid" src="assets/media/{{ selectOwnerID }}/{{ info.steamAvatar }}" alt="{{ user.fullname }}'s Steam Avatar'"><span>{{ info.steam }}</span></p>
           </div>
           <div class="col-sm-6" *ngIf="info.github">
-            <p><img class="img-fluid" src="assets/media/{{ selectOwnerID }}/{{ info.githubAvatar }}" alt="{{ user.fullname }}'s Github Avatar'"><b>{{ 'cv.github' | translate }}: </b> <span>{{ info.github }}</span></p>
+            <p><i class="fa fa-github" aria-hidden="true"></i><b>{{ 'cv.github' | translate }}: </b><img class="img-fluid" src="assets/media/{{ selectOwnerID }}/{{ info.githubAvatar }}" alt="{{ user.fullname }}'s Github Avatar'"> <span>{{ info.github }}</span></p>
+          </div>
+          <div class="col-sm-6" *ngIf="info.weibo">
+            <p><i class="fa fa-weibo" aria-hidden="true"></i><b>{{ 'cv.weibo' | translate }}: </b><img class="img-fluid" src="assets/media/{{ selectOwnerID }}/{{ info.weiboAvatar }}" alt="{{ user.fullname }}'s Weibo Avatar'"> <span>{{ info.weibo }}</span></p>
+          </div>
+          <div class="col-sm-6" *ngIf="info.twitter">
+            <p><i class="fa fa-twitter" aria-hidden="true"></i><b>{{ 'cv.twitter' | translate }}: </b><img class="img-fluid" src="assets/media/{{ selectOwnerID }}/{{ info.twitterAvatar }}" alt="{{ user.fullname }}'s Twitter Avatar'"> <span>{{ info.twitter }}</span></p>
           </div>
         </section>
       </div>
@@ -118,7 +124,13 @@
               <tbody>
                 <tr *ngFor="let exp of workexp,let i=index">
                   <th scope="row">{{ i+1 }}</th>
-                  <td>{{ exp.period.timeStart|date:'y/M' }}-{{ exp.period.timeEnd|date:'y/M' }}</td>
+                  <td>{{ exp.period.timeStart|date:'y/M' }}
+                    -
+                    <span *ngIf="exp.period.timeEnd">{{ exp.period.timeEnd|date:'y/M' }}</span>
+                    
+                    <span *ngIf="!exp.period.timeEnd">{{ 'cv.now' | translate }}</span>
+
+                  </td>
                   <td>{{ exp.company }}</td>
                   <td>{{ exp.title }}</td>
                 </tr>
@@ -213,11 +225,20 @@
         <section class="row">
           <p>{{ 'cv.vacvDescr' | translate }}</p>
         </section> 
-        <footer>
-          <p><img src="assets/images/va-cv.png" alt="vacv-QRCode"></p>
-          <small>longyiszh.github.io/va-cv</small>
-          <p>{{ 'cv.alsoVisitOnlineVer' | translate }}</p>
-        </footer>
+        <div *ngIf="cvService.contentMode === online; then onlineMode else localMode"></div>
+        <ng-template #onlineMode>
+          <footer>
+            // show product pics here
+          </footer>
+        </ng-template>
+        <ng-template #localMode>
+          <footer>
+            <p><img src="assets/images/va-cv.png" alt="vacv-QRCode"></p>
+            <small>longyiszh.github.io/va-cv</small>
+            <p>{{ 'cv.alsoVisitOnlineVer' | translate }}</p>
+          </footer>
+        </ng-template>
+
       </div>
     </li>
   </ul>

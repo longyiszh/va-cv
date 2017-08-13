@@ -99,7 +99,8 @@ main {
                 header {
                     background-color: $teal;
                 }
-                i.material-icons {
+                i {
+                    font-size: 20px;
                     color: $teal;
                     position: relative;
                     top: 5px;
@@ -108,7 +109,6 @@ main {
                 img {
                     width: 20px;
                     position: relative;
-                    right: 9px;
                 }
             }
             div#edu {

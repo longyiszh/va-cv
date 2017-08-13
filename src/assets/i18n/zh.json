@@ -7,6 +7,8 @@
         "php": "个人主页",
         "steam": "Steam",
         "github": "Github",
+        "weibo": "微博",
+        "twitter": "推",
 
         "edu": "教育经历",
         "gradFrom": "毕业于",
@@ -26,6 +28,7 @@
         "time": "时间",
         "project": "项目",
         "wid": "所做工作",
+        "now": "现在",
 
         "interests": "兴趣爱好",
         "proInterests": "职业兴趣",
