@@ -17,6 +17,9 @@ export class CvService {
   private lang: string = "en";
   private fileType: string = "json";
 
+  public contentMode: string = "online"; // could be one of the following: local, online. 
+                                // Used to tell the component if it's online mode or local mode by the method getCVData() . 
+
   constructor(
     //private _http: Http,
     private dataService: DataService,
@@ -32,14 +35,6 @@ export class CvService {
 
     return lang;
   }
-
-  // getInfo() {
-  //   let info = this._http.get(this._url)
-  //     .map(this.extractData)
-  //     .catch(this.throwException);
-
-  //   return info;
-  // }
 
   private getInfo: (isDefault?)=> Promise<any> = (isDefault = false) => {
     let url: string = `${this.dataPath}/${this.filename}_${this.lang}.${this.fileType}`;
@@ -63,11 +58,13 @@ export class CvService {
       this.getInfo().then(
         (resData) => { // found custom data
           resolve(resData);
+          this.contentMode = "local"; // then automatically enter local mode.
         },
-        (error) => { //unable to find custom data then fall back to default
+        (error) => { // unable to find custom data then fall back to default
           this.getInfo(true).then(
             (resData) => {
               resolve(resData);
+              this.contentMode = "online"; // so automatically enter online mode.
             },
             (error) => { // default data is also lost then gg
               reject(error);
