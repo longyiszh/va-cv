@@ -71,7 +71,7 @@ interface IInterests {
 export class CvComponent implements OnInit {
 
   constructor(
-    private cvService: CvService,
+    public cvService: CvService,
     private router: Router,
     private actRoute: ActivatedRoute,
     private translate: TranslateService

@@ -225,7 +225,7 @@
         <section class="row">
           <p>{{ 'cv.vacvDescr' | translate }}</p>
         </section> 
-        <div *ngIf="cvService.contentMode === online; then onlineMode else localMode"></div>
+        <div *ngIf="cvService.contentMode === 'online'; then onlineMode else localMode"></div>
         <ng-template #onlineMode>
           <footer>
             // show product pics here
