@@ -15,7 +15,6 @@ header#cover {
     }
     h3#username {
         margin-top:25px;
-        text-align: center;
         font-size: 40px;
     }
     h4#pfFields {
@@ -212,11 +211,12 @@ div.andMore {
 /* Extra small devices (phones, less than 768px) */
 @media only screen and (max-width: 768px) {	
     header#cover {
+        h3#username {
+            text-align: center;
+        }
+        
         h3#fullTitle {
             display: none;
-        }
-        h3#username {
-            display: block;
         }
     }
 }
@@ -224,12 +224,12 @@ div.andMore {
 /* Small devices (tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 992px) {
     header#cover {
+        h3#username {
+            text-align: center;
+        }
         h3#fullTitle {
             display: none;
-        }
-        h3#username {
-            display: block;
-        }       
+        }     
     }
 }
 
@@ -238,20 +238,15 @@ div.andMore {
     h3#fullTitle {
         display: block;
     }
-    h3#username {
-        display: none;
-    }  
     #divAvatarHolder {
-        float:right;
+        position: absolute;
+        right: 5em;
     }
     h4#pfFields {
         float: left;
     }
     div#info {
         section.row {
-            position: relative;
-            bottom: 50px;
-            margin-bottom: -16px;
             div > p {
                 margin: 5px 0px 5px 0px;
             }
@@ -264,22 +259,14 @@ div.andMore {
     h3#fullTitle {
         display: block;
     }
-    h3#username {
-        display: none;
-    }
     #divAvatarHolder {
-        float:right;
+        position: absolute;
+        right: 5em;
     }
     h4#pfFields {
         float: left;
     }
-    div#info {
-        section.row {
-            position: relative;
-            bottom: 71px;
-            margin-bottom: -50px;
-        }
-    }
+
 }
 
 /* Responsive Settings End*/
