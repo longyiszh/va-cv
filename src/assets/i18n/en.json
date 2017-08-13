@@ -6,6 +6,7 @@
         "email": "Email",
         "php": "Home page",
         "steam": "Steam",
+        "github": "Github",
 
         "edu": "Education",
         "gradFrom": "Graduated from",
@@ -31,6 +32,10 @@
         "perInterests": "Personal Interests",
 
         "awards": "Awards",
-        "andMore": "And more..."
+        "andMore": "And more...",
+
+        "other": "Other",
+        "vacvDescr": "This resume is an Angular4 SPA, implemented bootstrap framework and material design style, offering English and simplified Chinese simultaneously (which aotumatically switched according to your browser language). The front-end code is provided in my github repo, available for your visit!",
+        "alsoVisitOnlineVer": "You may also go visit the online version of this resume. Thanks for viewing!"
     }
 }

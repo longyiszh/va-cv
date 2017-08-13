@@ -105,6 +105,11 @@ main {
                     top: 5px;
                     right: 9px;
                 }
+                img {
+                    width: 20px;
+                    position: relative;
+                    right: 9px;
+                }
             }
             div#edu {
                 header {
@@ -165,6 +170,18 @@ main {
                 }
                 .awardLvl {
                     color: $pink;
+                }
+                div.andMore {
+                    margin: 0px auto;
+                }
+            }
+            div.other {
+                header {
+                    background-color: $teal;
+                }
+                footer {
+                    font-weight: bold;
+                    text-align: center;
                 }
             }
         } // <-- li
