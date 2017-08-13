@@ -29,4 +29,4 @@ const vacvRoute: Routes = [
     }
 ]
 
-export const vacvRouting = RouterModule.forRoot(vacvRoute,{ useHash: true });
+export const vacvRouting = RouterModule.forRoot(vacvRoute,{ useHash: false });
