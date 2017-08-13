@@ -48,3 +48,8 @@ $localWarn: map-get($vacv-warn, 500);
     text-transform: uppercase;
     text-decoration: none;
 }
+
+//material body color patch
+body {
+    background-color: #fafafa;
+}
