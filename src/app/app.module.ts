@@ -5,6 +5,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
 import { RouterModule } from '@angular/router'; 
+
+
 /* @angular modules e */
 
 /* ngx-translate modules s */
@@ -45,6 +47,7 @@ const angularModules = [
   imports: [
     angularModules,
     MdModule,
+
 
     TranslateModule.forRoot({
         loader: {

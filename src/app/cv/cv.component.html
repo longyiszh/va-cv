@@ -87,7 +87,7 @@
         <section class="row">
           <md-card class="col-sm-3" *ngFor="let project of projects">
             <md-card-title class="projectImg">
-              <img *ngIf="project.img" src="assets/images/{{ project.img }}" alt="{{ project.name }}">
+              <img *ngIf="project.img" [lazyLoad]="project.img" alt="{{ project.name }}">
               <i *ngIf="!project.img" class="material-icons md-80">settings</i>
             </md-card-title>
             <md-card-content>
@@ -189,7 +189,7 @@
         <section class="row">
           <md-card class="col-sm-3" *ngFor="let award of awards">
             <md-card-title class="projectImg">
-              <img *ngIf="award.img" src="assets/images/{{award.img}}" alt="{{ award.title }}">
+              <img *ngIf="award.img" [lazyLoad]="award.img" alt="{{ award.title }}">
               <i *ngIf="!award.img" class="material-icons md-80">redeem</i>
             </md-card-title>
             <md-card-content>
