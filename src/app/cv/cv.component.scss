@@ -76,7 +76,8 @@ main {
                             text-align: center;
                             img {
                                 margin-top: 10px;
-                                max-width: 80px;
+                                max-width: 6.5em;
+                                box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
                             }
                             i {
                                 margin-top: 10px;
@@ -195,13 +196,18 @@ div.andMore {
         max-height: 80%;
         img {
             margin-top: 10px;
-            max-width: 80px;
+            max-width: 6.5em;
+            box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
         }
         i {
             margin-top: 10px;
             font-size: 70px;
         }
     }
+}
+
+img.qrcode {
+    width: 5em;
 }
 
 

@@ -109,12 +109,8 @@ export class CvComponent implements OnInit {
 
   public edu: any = {};
 
-  public awards: [IAwards] = [
-    {
-      title: [],
-      level: "",
-      time: new Date("1980/1/1"),
-    }
+  public awards: IAwards[] = [
+
   ]
 
   public apply: IDesiredJobs = null;
@@ -185,7 +181,9 @@ export class CvComponent implements OnInit {
     this.user.avatar = owner.user.avatar;
     this.info = owner.info;
     this.edu = owner.edu;
+
     this.awards = owner.awards;
+
     this.apply = owner.apply;
     this.workexp = owner.workexp;
     this.projects = owner.projects;
