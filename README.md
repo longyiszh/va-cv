@@ -1,17 +1,18 @@
-# VaCv
+# va-cv
 
-Valorad's material CV, powered by [node](https://nodejs.org/) and [angular4](https://github.com/angular/angular), was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.30, and updated to 1.0.0.
+> Valorad's material resume v2
 
-# Add custom data
+## Build Setup
 
-add a owner_zh.json (or zh being en, zt, de or other language locale) under `assets/data`.
-Be sure to follow the data structure. Some information such as phone number, desire jobs may not necessarily given, though.
+``` bash
+# install dependencies
+npm install
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# serve with hot reload at localhost:8080
+npm run serve
 
-## Deploying to GitHub Pages
+# build for production with minification
+npm run build
+```
 
-Run `npm run deploy` to deploy to GitHub Pages.
-
-
+For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
