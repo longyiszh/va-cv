@@ -1,10 +1,10 @@
 <template>
   <section>
-    dummy works
+    http404 works
   </section>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>
 
@@ -13,9 +13,9 @@
   import Component from 'vue-class-component';
 
   @Component({
-    name: 'dummy'
+    name: 'http404'
   })
-  export default class Dummy extends Vue {
+  export default class Http404 extends Vue {
 
   }
 </script>

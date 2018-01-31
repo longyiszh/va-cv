@@ -1,6 +1,10 @@
 <template>
   <section id="app">
-    vacv
+    
+    <main class="router">
+      <router-view></router-view>
+    </main>
+
   </section>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <section>
-    dummy works
+    index works
   </section>
 </template>
 
@@ -13,9 +13,9 @@
   import Component from 'vue-class-component';
 
   @Component({
-    name: 'dummy'
+    name: 'index'
   })
-  export default class Dummy extends Vue {
+  export default class Index extends Vue {
 
   }
 </script>
