@@ -1,0 +1,9 @@
+@import "./theme";
+
+@include md-register-theme("default", (
+  primary: $primary,
+  accent: $accent,
+  warn: $warn
+));
+
+@import "~vue-material/dist/theme/all"; // Apply the theme

@@ -1,8 +1,27 @@
 @import '~vue-material/dist/vue-material.css';
 // md theme
-@import './assets/scss/theme';
+@import './assets/scss/theme_core';
 
 body {
-  font-size: 14px;
+  font-size: 20px;
   font-family: "Roboto", "Microsoft YaHei", "微软雅黑", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif, "Noto Sans CJK SC";
+  margin: 0px;
+}
+
+@mixin normal() {
+  body {
+    font-size: 14px;
+    height: 1000px;
+    overflow: hidden;
+  }
+}
+
+
+@media only screen and (min-width: 576px) {
+  @include normal();
+}
+
+
+@media print {
+  @include normal();
 }

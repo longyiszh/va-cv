@@ -6,12 +6,18 @@ import App from './App.vue';
 import VueRouter from "vue-router";
 import { appRoute } from "./app.route";
 
-import { MdButton } from 'vue-material/dist/components';
+import {
+  MdApp,
+  MdContent,
+  MdIcon
+} from 'vue-material/dist/components';
 
 Vue.use(VueRouter);
 
 // vue material
-Vue.use(MdButton);
+Vue.use(MdApp);
+Vue.use(MdContent);
+Vue.use(MdIcon);
 
 const router = new VueRouter({
   routes: appRoute
