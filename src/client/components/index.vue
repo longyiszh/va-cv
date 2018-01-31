@@ -1,6 +1,10 @@
 <template>
   <section>
     index works
+
+      <md-button class="md-primary">Primary</md-button>
+      <md-button class="md-accent">Accent</md-button>
+
   </section>
 </template>
 
