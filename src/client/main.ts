@@ -9,7 +9,8 @@ import { appRoute } from "./app.route";
 import {
   MdApp,
   MdContent,
-  MdIcon
+  MdIcon,
+  MdToolbar
 } from 'vue-material/dist/components';
 
 Vue.use(VueRouter);
@@ -18,6 +19,7 @@ Vue.use(VueRouter);
 Vue.use(MdApp);
 Vue.use(MdContent);
 Vue.use(MdIcon);
+Vue.use(MdToolbar);
 
 const router = new VueRouter({
   routes: appRoute
